@@ -1,25 +1,147 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="hpS-2h-cCj">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
-        <scene sceneID="ufC-wZ-h7g">
+        <!--Tab Bar Controller-->
+        <scene sceneID="bCq-wZ-Svl">
             <objects>
-                <viewController id="vXZ-lx-hvc" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
-                        <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
+                <tabBarController id="hpS-2h-cCj" sceneMemberID="viewController">
+                    <nil key="simulatedBottomBarMetrics"/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="4sJ-Y8-E1r">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="QNs-AS-Nge" kind="relationship" relationship="viewControllers" id="gW8-FJ-4ld"/>
+                        <segue destination="thp-TQ-3yN" kind="relationship" relationship="viewControllers" id="htb-t0-BZI"/>
+                        <segue destination="lHR-fP-pXq" kind="relationship" relationship="viewControllers" id="MDH-nd-dwg"/>
+                        <segue destination="S1w-QJ-1Uj" kind="relationship" relationship="viewControllers" id="gwA-pz-cmD"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QCl-cD-OuS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="212" y="393"/>
+        </scene>
+        <!--Schedule-->
+        <scene sceneID="drG-Xx-juj">
+            <objects>
+                <tableViewController id="QNs-AS-Nge" customClass="ConferencesTableViewController" customModule="IT_Tour" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="D0B-Ef-QeU">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="fDr-PC-JHc">
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="fDr-PC-JHc" id="2Xy-pW-y8I">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="QNs-AS-Nge" id="nkj-cN-zMY"/>
+                            <outlet property="delegate" destination="QNs-AS-Nge" id="44J-N2-x1t"/>
+                        </connections>
+                    </tableView>
+                    <tabBarItem key="tabBarItem" title="Schedule" image="schedule" selectedImage="scheduleSelected" id="4K3-bt-hx8"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fns-me-J1t" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1109" y="-977"/>
+        </scene>
+        <!--Favorites-->
+        <scene sceneID="VR3-el-N3E">
+            <objects>
+                <tableViewController id="thp-TQ-3yN" customClass="FavoritesTableViewController" customModule="IT_Tour" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="rf4-DY-e1K">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="pK4-pA-QlI">
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="pK4-pA-QlI" id="5aO-WY-DJu">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="thp-TQ-3yN" id="ner-XQ-vZj"/>
+                            <outlet property="delegate" destination="thp-TQ-3yN" id="FIY-Mx-uTw"/>
+                        </connections>
+                    </tableView>
+                    <tabBarItem key="tabBarItem" title="Favorites" image="favorites" selectedImage="favoritesSelected" id="Kh4-4j-kfX"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YRO-A1-fA5" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1109" y="-291"/>
+        </scene>
+        <!--Presenters-->
+        <scene sceneID="NoM-Co-4Kd">
+            <objects>
+                <tableViewController id="lHR-fP-pXq" customClass="LecturersTableViewController" customModule="IT_Tour" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="6Oh-WX-Ez7">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="nU0-H2-SqX">
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="nU0-H2-SqX" id="0PC-hS-uMg">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="lHR-fP-pXq" id="8PH-4y-VAL"/>
+                            <outlet property="delegate" destination="lHR-fP-pXq" id="h9d-Al-8nS"/>
+                        </connections>
+                    </tableView>
+                    <tabBarItem key="tabBarItem" title="Presenters" image="presenters" selectedImage="presentersSelected" id="QMj-GF-3s5"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hWO-OP-tdv" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1109" y="393"/>
+        </scene>
+        <!--Videos-->
+        <scene sceneID="9cN-xf-ICT">
+            <objects>
+                <tableViewController id="S1w-QJ-1Uj" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="eFh-Ku-hK0">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="X5N-bZ-0a9">
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="X5N-bZ-0a9" id="6kd-9H-izF">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="S1w-QJ-1Uj" id="XHM-hu-G3L"/>
+                            <outlet property="delegate" destination="S1w-QJ-1Uj" id="7kO-lQ-zPf"/>
+                        </connections>
+                    </tableView>
+                    <tabBarItem key="tabBarItem" title="Videos" image="videos" selectedImage="videosSelected" id="Lru-O3-5Zv"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="NhW-Z1-pD2" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1109" y="1140"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="favorites" width="28" height="26"/>
+        <image name="favoritesSelected" width="28" height="26"/>
+        <image name="presenters" width="28" height="25"/>
+        <image name="presentersSelected" width="28" height="25"/>
+        <image name="schedule" width="28" height="28"/>
+        <image name="scheduleSelected" width="28" height="28"/>
+        <image name="videos" width="28" height="18"/>
+        <image name="videosSelected" width="28" height="18"/>
+    </resources>
 </document>
