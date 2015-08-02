@@ -13,7 +13,7 @@
 		494EA3091B6D86DB00CFECAD /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 494EA3081B6D86DB00CFECAD /* Images.xcassets */; };
 		494EA30C1B6D86DB00CFECAD /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 494EA30A1B6D86DB00CFECAD /* LaunchScreen.xib */; };
 		494EA3181B6D86DB00CFECAD /* IT_TourTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494EA3171B6D86DB00CFECAD /* IT_TourTests.swift */; };
-		494EA3231B6DF8B200CFECAD /* PersistenceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494EA3221B6DF8B200CFECAD /* PersistenceController.swift */; };
+		494EA3231B6DF8B200CFECAD /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494EA3221B6DF8B200CFECAD /* CoreDataManager.swift */; };
 		494EA3251B6E8FF300CFECAD /* Room.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494EA3241B6E8FF300CFECAD /* Room.swift */; };
 		494EA3271B6E8FF400CFECAD /* Conference.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494EA3261B6E8FF400CFECAD /* Conference.swift */; };
 		494EA3291B6E8FF400CFECAD /* Presenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494EA3281B6E8FF400CFECAD /* Presenter.swift */; };
@@ -45,7 +45,7 @@
 		494EA3111B6D86DB00CFECAD /* IT TourTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "IT TourTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		494EA3161B6D86DB00CFECAD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		494EA3171B6D86DB00CFECAD /* IT_TourTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IT_TourTests.swift; sourceTree = "<group>"; };
-		494EA3221B6DF8B200CFECAD /* PersistenceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersistenceController.swift; sourceTree = "<group>"; };
+		494EA3221B6DF8B200CFECAD /* CoreDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		494EA3241B6E8FF300CFECAD /* Room.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Room.swift; sourceTree = "<group>"; };
 		494EA3261B6E8FF400CFECAD /* Conference.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Conference.swift; sourceTree = "<group>"; };
 		494EA3281B6E8FF400CFECAD /* Presenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Presenter.swift; sourceTree = "<group>"; };
@@ -54,6 +54,7 @@
 		494EA32F1B6E97CA00CFECAD /* LecturersTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LecturersTableViewController.swift; sourceTree = "<group>"; };
 		494EA3311B6E98A200CFECAD /* FavoritesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoritesTableViewController.swift; sourceTree = "<group>"; };
 		494EA3331B6E9A8000CFECAD /* VideosTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideosTableViewController.swift; sourceTree = "<group>"; };
+		494EA33C1B6EB34100CFECAD /* IT Tour.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "IT Tour.entitlements"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,6 +113,7 @@
 		494EA2FC1B6D86DB00CFECAD /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				494EA33C1B6EB34100CFECAD /* IT Tour.entitlements */,
 				494EA2FD1B6D86DB00CFECAD /* Info.plist */,
 			);
 			name = "Supporting Files";
@@ -137,9 +139,9 @@
 		494EA3211B6DF88100CFECAD /* CoreData */ = {
 			isa = PBXGroup;
 			children = (
+				494EA3221B6DF8B200CFECAD /* CoreDataManager.swift */,
 				494EA32C1B6E900100CFECAD /* Generated */,
 				494EA3001B6D86DB00CFECAD /* IT_Tour.xcdatamodeld */,
-				494EA3221B6DF8B200CFECAD /* PersistenceController.swift */,
 			);
 			name = CoreData;
 			sourceTree = "<group>";
@@ -206,6 +208,11 @@
 					494EA2F81B6D86DA00CFECAD = {
 						CreatedOnToolsVersion = 6.4;
 						DevelopmentTeam = 7HUQ6MAYUM;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 					494EA3101B6D86DB00CFECAD = {
 						CreatedOnToolsVersion = 6.4;
@@ -265,7 +272,7 @@
 				494EA2FF1B6D86DB00CFECAD /* AppDelegate.swift in Sources */,
 				494EA32B1B6E8FF400CFECAD /* Lecture.swift in Sources */,
 				494EA3271B6E8FF400CFECAD /* Conference.swift in Sources */,
-				494EA3231B6DF8B200CFECAD /* PersistenceController.swift in Sources */,
+				494EA3231B6DF8B200CFECAD /* CoreDataManager.swift in Sources */,
 				494EA3341B6E9A8000CFECAD /* VideosTableViewController.swift in Sources */,
 				494EA3251B6E8FF300CFECAD /* Room.swift in Sources */,
 			);
@@ -394,6 +401,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "IT Tour/IT Tour.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Developer: Vladimir Savov (74C3PZX295)";
 				INFOPLIST_FILE = "IT Tour/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -406,6 +414,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "IT Tour/IT Tour.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Developer: Vladimir Savov (74C3PZX295)";
 				INFOPLIST_FILE = "IT Tour/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

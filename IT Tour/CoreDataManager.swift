@@ -1,5 +1,5 @@
 //
-//  PersistenceController.swift
+//  CoreDataManager.swift
 //  IT Tour
 //
 //  Created by Vladimir Savov on 2.08.15.
@@ -9,9 +9,9 @@
 import CoreData
 import Foundation
 
-class PersistanceController {
+class CoreDataManager {
     
-    static let sharedInstance = PersistanceController()
+    static let sharedInstance = CoreDataManager()
     
     lazy private(set) var managedObjectContext: NSManagedObjectContext = {
         var managedObjectContext = NSManagedObjectContext(concurrencyType: NSManagedObjectContextConcurrencyType.MainQueueConcurrencyType)
@@ -36,11 +36,19 @@ class PersistanceController {
         
         let persistanceStoreCoordinator = NSPersistentStoreCoordinator(managedObjectModel: mom!)
         
-        let urls = NSFileManager.defaultManager().URLsForDirectory(.DocumentDirectory, inDomains: .UserDomainMask)
-        let storeURL = (urls[urls.endIndex-1]).URLByAppendingPathComponent("ITTour.sqlite")
+        let fileManager = NSFileManager.defaultManager()
+        var folderPath = fileManager.containerURLForSecurityApplicationGroupIdentifier("group.bg.it-tour.IT-Tour")!.path!
+        folderPath = folderPath.stringByAppendingPathComponent("CoreData")
+        
+        if fileManager.fileExistsAtPath(folderPath) {
+            var error: NSError?
+            
+            assert(fileManager.createDirectoryAtPath(folderPath, withIntermediateDirectories: true, attributes: nil, error: &error), "Failed to create CoreData folder \(folderPath), error \(error!)")
+        }
+        
+        let storeURL = NSURL(fileURLWithPath: folderPath)!.URLByAppendingPathComponent("ITTour.sqlite")
         
         var error: NSError?
-        
         var store = self.persistanceStoreCoordinator.addPersistentStoreWithType(NSSQLiteStoreType, configuration: nil, URL: storeURL, options: nil, error: &error)
         assert(store != nil, "Failed to load Persistant Store! Unresolved error \(error?.localizedDescription), \(error?.userInfo)\nAttempted to create store at \(storeURL)")
         
