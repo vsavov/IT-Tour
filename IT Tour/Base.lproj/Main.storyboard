@@ -17,10 +17,10 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </tabBar>
                     <connections>
-                        <segue destination="QNs-AS-Nge" kind="relationship" relationship="viewControllers" id="gW8-FJ-4ld"/>
-                        <segue destination="thp-TQ-3yN" kind="relationship" relationship="viewControllers" id="htb-t0-BZI"/>
-                        <segue destination="lHR-fP-pXq" kind="relationship" relationship="viewControllers" id="MDH-nd-dwg"/>
-                        <segue destination="S1w-QJ-1Uj" kind="relationship" relationship="viewControllers" id="gwA-pz-cmD"/>
+                        <segue destination="uVc-cQ-TPO" kind="relationship" relationship="viewControllers" id="2lN-aB-MwN"/>
+                        <segue destination="cGK-ys-hMG" kind="relationship" relationship="viewControllers" id="tJZ-9H-Wx9"/>
+                        <segue destination="bz0-dg-JYc" kind="relationship" relationship="viewControllers" id="UpF-7i-3xu"/>
+                        <segue destination="9tj-Hu-KU4" kind="relationship" relationship="viewControllers" id="KqK-WU-ARA"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QCl-cD-OuS" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -28,6 +28,23 @@
             <point key="canvasLocation" x="212" y="393"/>
         </scene>
         <!--Schedule-->
+        <scene sceneID="19d-vK-4Fs">
+            <objects>
+                <navigationController id="uVc-cQ-TPO" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Schedule" image="schedule" selectedImage="scheduleSelected" id="4K3-bt-hx8"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="wc2-1I-pQe">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="QNs-AS-Nge" kind="relationship" relationship="rootViewController" id="6AG-75-eXp"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="IlL-U1-5BM" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1109" y="-987"/>
+        </scene>
+        <!--Conferences Table View Controller-->
         <scene sceneID="drG-Xx-juj">
             <objects>
                 <tableViewController id="QNs-AS-Nge" customClass="ConferencesTableViewController" customModule="IT_Tour" customModuleProvider="target" sceneMemberID="viewController">
@@ -35,6 +52,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <searchBar key="tableHeaderView" contentMode="redraw" placeholder="Search" id="Qgu-6J-Mjw">
+                            <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            <textInputTraits key="textInputTraits"/>
+                            <connections>
+                                <outlet property="delegate" destination="QNs-AS-Nge" id="Spj-s8-AGG"/>
+                            </connections>
+                        </searchBar>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="conferenceCell" id="fDr-PC-JHc" customClass="ConferenceCell" customModule="IT_Tour" customModuleProvider="target">
                                 <autoresizingMask key="autoresizingMask"/>
@@ -85,13 +110,42 @@
                             <outlet property="delegate" destination="QNs-AS-Nge" id="44J-N2-x1t"/>
                         </connections>
                     </tableView>
-                    <tabBarItem key="tabBarItem" title="Schedule" image="schedule" selectedImage="scheduleSelected" id="4K3-bt-hx8"/>
+                    <navigationItem key="navigationItem" id="3d1-tz-cYx"/>
+                    <connections>
+                        <outlet property="searchDisplayController" destination="G6P-Aw-4If" id="eIT-zV-fvR"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fns-me-J1t" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <searchDisplayController id="G6P-Aw-4If">
+                    <connections>
+                        <outlet property="delegate" destination="QNs-AS-Nge" id="wRb-vA-dkq"/>
+                        <outlet property="searchBar" destination="Qgu-6J-Mjw" id="Wc8-eK-tAq"/>
+                        <outlet property="searchContentsController" destination="QNs-AS-Nge" id="eH5-4o-jtN"/>
+                        <outlet property="searchResultsDataSource" destination="QNs-AS-Nge" id="5Ix-5k-MIn"/>
+                        <outlet property="searchResultsDelegate" destination="QNs-AS-Nge" id="XLl-J9-A74"/>
+                    </connections>
+                </searchDisplayController>
             </objects>
-            <point key="canvasLocation" x="1109" y="-977"/>
+            <point key="canvasLocation" x="1801" y="-987"/>
         </scene>
         <!--Favorites-->
+        <scene sceneID="o4d-WQ-0hD">
+            <objects>
+                <navigationController id="cGK-ys-hMG" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Favorites" image="favorites" selectedImage="favoritesSelected" id="Kh4-4j-kfX"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="pGS-ef-TGn">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="thp-TQ-3yN" kind="relationship" relationship="rootViewController" id="kbV-zN-7xG"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="GQJ-M2-B0Z" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1109" y="-301"/>
+        </scene>
+        <!--Favorites Table View Controller-->
         <scene sceneID="VR3-el-N3E">
             <objects>
                 <tableViewController id="thp-TQ-3yN" customClass="FavoritesTableViewController" customModule="IT_Tour" customModuleProvider="target" sceneMemberID="viewController">
@@ -112,13 +166,30 @@
                             <outlet property="delegate" destination="thp-TQ-3yN" id="FIY-Mx-uTw"/>
                         </connections>
                     </tableView>
-                    <tabBarItem key="tabBarItem" title="Favorites" image="favorites" selectedImage="favoritesSelected" id="Kh4-4j-kfX"/>
+                    <navigationItem key="navigationItem" id="PB5-ap-A1u"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YRO-A1-fA5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1109" y="-291"/>
+            <point key="canvasLocation" x="1801" y="-301"/>
         </scene>
         <!--Presenters-->
+        <scene sceneID="SDF-Nl-9ln">
+            <objects>
+                <navigationController id="bz0-dg-JYc" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Presenters" image="presenters" selectedImage="presentersSelected" id="QMj-GF-3s5"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="h2C-Yr-Oci">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="lHR-fP-pXq" kind="relationship" relationship="rootViewController" id="qbU-a2-RXm"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ay3-1Z-Joa" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1109" y="393"/>
+        </scene>
+        <!--Lecturers Table View Controller-->
         <scene sceneID="NoM-Co-4Kd">
             <objects>
                 <tableViewController id="lHR-fP-pXq" customClass="LecturersTableViewController" customModule="IT_Tour" customModuleProvider="target" sceneMemberID="viewController">
@@ -139,13 +210,30 @@
                             <outlet property="delegate" destination="lHR-fP-pXq" id="h9d-Al-8nS"/>
                         </connections>
                     </tableView>
-                    <tabBarItem key="tabBarItem" title="Presenters" image="presenters" selectedImage="presentersSelected" id="QMj-GF-3s5"/>
+                    <navigationItem key="navigationItem" id="deK-PK-gts"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hWO-OP-tdv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1109" y="393"/>
+            <point key="canvasLocation" x="1801" y="393"/>
         </scene>
         <!--Videos-->
+        <scene sceneID="z6B-X9-bkE">
+            <objects>
+                <navigationController id="9tj-Hu-KU4" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Videos" image="videos" selectedImage="videosSelected" id="Lru-O3-5Zv"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="0Mc-zh-FcX">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="S1w-QJ-1Uj" kind="relationship" relationship="rootViewController" id="rgX-ZD-mVf"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="FfZ-wI-mtx" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1109" y="1144"/>
+        </scene>
+        <!--Table View Controller-->
         <scene sceneID="9cN-xf-ICT">
             <objects>
                 <tableViewController id="S1w-QJ-1Uj" sceneMemberID="viewController">
@@ -166,11 +254,11 @@
                             <outlet property="delegate" destination="S1w-QJ-1Uj" id="7kO-lQ-zPf"/>
                         </connections>
                     </tableView>
-                    <tabBarItem key="tabBarItem" title="Videos" image="videos" selectedImage="videosSelected" id="Lru-O3-5Zv"/>
+                    <navigationItem key="navigationItem" id="2en-lT-dLa"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NhW-Z1-pD2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1109" y="1140"/>
+            <point key="canvasLocation" x="1801" y="1144"/>
         </scene>
     </scenes>
     <resources>
