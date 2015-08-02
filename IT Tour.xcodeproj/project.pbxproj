@@ -56,7 +56,11 @@
 		494EA3331B6E9A8000CFECAD /* VideosTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideosTableViewController.swift; sourceTree = "<group>"; };
 		494EA3351B6EA47900CFECAD /* Conference.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Conference.swift; sourceTree = "<group>"; };
 		494EA3381B6EAE2C00CFECAD /* ConferenceCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConferenceCell.swift; sourceTree = "<group>"; };
+		494EA33B1B6EB32400CFECAD /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
 		494EA33C1B6EB34100CFECAD /* IT Tour.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "IT Tour.entitlements"; sourceTree = "<group>"; };
+		494EA33D1B6EB99300CFECAD /* bg */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = bg; path = bg.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		494EA33E1B6EB99300CFECAD /* bg */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = bg; path = bg.lproj/Main.strings; sourceTree = "<group>"; };
+		494EA3401B6EB9A200CFECAD /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -313,6 +317,8 @@
 			isa = PBXVariantGroup;
 			children = (
 				494EA3061B6D86DB00CFECAD /* Base */,
+				494EA33B1B6EB32400CFECAD /* en */,
+				494EA33E1B6EB99300CFECAD /* bg */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -321,6 +327,8 @@
 			isa = PBXVariantGroup;
 			children = (
 				494EA30B1B6D86DB00CFECAD /* Base */,
+				494EA33D1B6EB99300CFECAD /* bg */,
+				494EA3401B6EB9A200CFECAD /* en */,
 			);
 			name = LaunchScreen.xib;
 			sourceTree = "<group>";

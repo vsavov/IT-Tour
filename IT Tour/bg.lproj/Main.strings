@@ -1,0 +1,18 @@
+
+/* Class = "UITabBarItem"; title = "Schedule"; ObjectID = "4K3-bt-hx8"; */
+"4K3-bt-hx8.title" = "Програма";
+
+/* Class = "UITabBarItem"; title = "Favorites"; ObjectID = "Kh4-4j-kfX"; */
+"Kh4-4j-kfX.title" = "Любими";
+
+/* Class = "UITabBarItem"; title = "Videos"; ObjectID = "Lru-O3-5Zv"; */
+"Lru-O3-5Zv.title" = "Видео";
+
+/* Class = "UITabBarItem"; title = "Presenters"; ObjectID = "QMj-GF-3s5"; */
+"QMj-GF-3s5.title" = "Лектори";
+
+/* Class = "UILabel"; text = "VarnaConf 2015"; ObjectID = "WQw-3N-z6x"; */
+"WQw-3N-z6x.text" = "VarnaConf 2015";
+
+/* Class = "UILabel"; text = "15 August 2015"; ObjectID = "u1S-1a-7aJ"; */
+"u1S-1a-7aJ.text" = "15 August 2015";
