@@ -7,6 +7,7 @@
         <attribute name="isDefault" attributeType="Boolean" defaultValueString="NO" syncable="YES"/>
         <attribute name="logoURL" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="startDate" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="year" optional="YES" transient="YES" attributeType="String" syncable="YES"/>
         <relationship name="lectures" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Lecture" inverseName="conference" inverseEntity="Lecture" syncable="YES"/>
     </entity>
     <entity name="Lecture" representedClassName="PRODUCT_MODULE_NAME.Lecture" syncable="YES">
@@ -33,9 +34,9 @@
         <relationship name="lectures" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Lecture" inverseName="room" inverseEntity="Lecture" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Conference" positionX="-63" positionY="-18" width="128" height="150"/>
+        <element name="Conference" positionX="-63" positionY="-18" width="128" height="165"/>
+        <element name="Lecture" positionX="-18" positionY="72" width="128" height="165"/>
         <element name="Presenter" positionX="-54" positionY="36" width="128" height="135"/>
         <element name="Room" positionX="-36" positionY="63" width="128" height="90"/>
-        <element name="Lecture" positionX="-18" positionY="72" width="128" height="165"/>
     </elements>
 </model>

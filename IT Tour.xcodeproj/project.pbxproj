@@ -15,13 +15,14 @@
 		494EA3181B6D86DB00CFECAD /* IT_TourTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494EA3171B6D86DB00CFECAD /* IT_TourTests.swift */; };
 		494EA3231B6DF8B200CFECAD /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494EA3221B6DF8B200CFECAD /* CoreDataManager.swift */; };
 		494EA3251B6E8FF300CFECAD /* Room.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494EA3241B6E8FF300CFECAD /* Room.swift */; };
-		494EA3271B6E8FF400CFECAD /* Conference.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494EA3261B6E8FF400CFECAD /* Conference.swift */; };
 		494EA3291B6E8FF400CFECAD /* Presenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494EA3281B6E8FF400CFECAD /* Presenter.swift */; };
 		494EA32B1B6E8FF400CFECAD /* Lecture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494EA32A1B6E8FF400CFECAD /* Lecture.swift */; };
 		494EA32E1B6E974000CFECAD /* ConferencesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494EA32D1B6E974000CFECAD /* ConferencesTableViewController.swift */; };
 		494EA3301B6E97CA00CFECAD /* LecturersTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494EA32F1B6E97CA00CFECAD /* LecturersTableViewController.swift */; };
 		494EA3321B6E98A200CFECAD /* FavoritesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494EA3311B6E98A200CFECAD /* FavoritesTableViewController.swift */; };
 		494EA3341B6E9A8000CFECAD /* VideosTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494EA3331B6E9A8000CFECAD /* VideosTableViewController.swift */; };
+		494EA3361B6EA47900CFECAD /* Conference.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494EA3351B6EA47900CFECAD /* Conference.swift */; };
+		494EA3391B6EAE2C00CFECAD /* ConferenceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494EA3381B6EAE2C00CFECAD /* ConferenceCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,13 +48,14 @@
 		494EA3171B6D86DB00CFECAD /* IT_TourTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IT_TourTests.swift; sourceTree = "<group>"; };
 		494EA3221B6DF8B200CFECAD /* CoreDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		494EA3241B6E8FF300CFECAD /* Room.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Room.swift; sourceTree = "<group>"; };
-		494EA3261B6E8FF400CFECAD /* Conference.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Conference.swift; sourceTree = "<group>"; };
 		494EA3281B6E8FF400CFECAD /* Presenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Presenter.swift; sourceTree = "<group>"; };
 		494EA32A1B6E8FF400CFECAD /* Lecture.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Lecture.swift; sourceTree = "<group>"; };
 		494EA32D1B6E974000CFECAD /* ConferencesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConferencesTableViewController.swift; sourceTree = "<group>"; };
 		494EA32F1B6E97CA00CFECAD /* LecturersTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LecturersTableViewController.swift; sourceTree = "<group>"; };
 		494EA3311B6E98A200CFECAD /* FavoritesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoritesTableViewController.swift; sourceTree = "<group>"; };
 		494EA3331B6E9A8000CFECAD /* VideosTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideosTableViewController.swift; sourceTree = "<group>"; };
+		494EA3351B6EA47900CFECAD /* Conference.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Conference.swift; sourceTree = "<group>"; };
+		494EA3381B6EAE2C00CFECAD /* ConferenceCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConferenceCell.swift; sourceTree = "<group>"; };
 		494EA33C1B6EB34100CFECAD /* IT Tour.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "IT Tour.entitlements"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -97,7 +99,7 @@
 			isa = PBXGroup;
 			children = (
 				494EA2FE1B6D86DB00CFECAD /* AppDelegate.swift */,
-				494EA32D1B6E974000CFECAD /* ConferencesTableViewController.swift */,
+				494EA3371B6EAE0600CFECAD /* Conferences Screen */,
 				494EA3211B6DF88100CFECAD /* CoreData */,
 				494EA3311B6E98A200CFECAD /* FavoritesTableViewController.swift */,
 				494EA3081B6D86DB00CFECAD /* Images.xcassets */,
@@ -149,12 +151,21 @@
 		494EA32C1B6E900100CFECAD /* Generated */ = {
 			isa = PBXGroup;
 			children = (
-				494EA3261B6E8FF400CFECAD /* Conference.swift */,
+				494EA3351B6EA47900CFECAD /* Conference.swift */,
 				494EA32A1B6E8FF400CFECAD /* Lecture.swift */,
 				494EA3281B6E8FF400CFECAD /* Presenter.swift */,
 				494EA3241B6E8FF300CFECAD /* Room.swift */,
 			);
 			name = Generated;
+			sourceTree = "<group>";
+		};
+		494EA3371B6EAE0600CFECAD /* Conferences Screen */ = {
+			isa = PBXGroup;
+			children = (
+				494EA32D1B6E974000CFECAD /* ConferencesTableViewController.swift */,
+				494EA3381B6EAE2C00CFECAD /* ConferenceCell.swift */,
+			);
+			name = "Conferences Screen";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -270,11 +281,12 @@
 				494EA3321B6E98A200CFECAD /* FavoritesTableViewController.swift in Sources */,
 				494EA3021B6D86DB00CFECAD /* IT_Tour.xcdatamodeld in Sources */,
 				494EA2FF1B6D86DB00CFECAD /* AppDelegate.swift in Sources */,
+				494EA3361B6EA47900CFECAD /* Conference.swift in Sources */,
 				494EA32B1B6E8FF400CFECAD /* Lecture.swift in Sources */,
-				494EA3271B6E8FF400CFECAD /* Conference.swift in Sources */,
 				494EA3231B6DF8B200CFECAD /* CoreDataManager.swift in Sources */,
 				494EA3341B6E9A8000CFECAD /* VideosTableViewController.swift in Sources */,
 				494EA3251B6E8FF300CFECAD /* Room.swift in Sources */,
+				494EA3391B6EAE2C00CFECAD /* ConferenceCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

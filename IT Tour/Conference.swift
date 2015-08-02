@@ -11,12 +11,20 @@ import CoreData
 
 class Conference: NSManagedObject {
 
-    @NSManaged var isDefault: NSNumber
     @NSManaged var conferenceID: NSNumber
     @NSManaged var conferenceName: String
-    @NSManaged var startDate: NSDate
     @NSManaged var endDate: NSDate
+    @NSManaged var isDefault: NSNumber
     @NSManaged var logoURL: String
+    @NSManaged var startDate: NSDate
     @NSManaged var lectures: NSSet
 
+    var year: String {
+        let flags = NSCalendarUnit.CalendarUnitYear
+        let components = NSCalendar.currentCalendar().components(flags, fromDate: self.startDate)
+        
+        let yearComponent = components.year
+        
+        return String(yearComponent)
+    }
 }
