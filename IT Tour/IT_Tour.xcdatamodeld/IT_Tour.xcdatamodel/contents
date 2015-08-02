@@ -1,4 +1,41 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model name="Test1.xcdatamodel" userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="1" systemVersion="11A491" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
-    <elements/>
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="7701" systemVersion="14E46" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="Conference" representedClassName="PRODUCT_MODULE_NAME.Conference" syncable="YES">
+        <attribute name="conferenceID" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="conferenceName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="endDate" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="isDefault" attributeType="Boolean" defaultValueString="NO" syncable="YES"/>
+        <attribute name="logoURL" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="startDate" optional="YES" attributeType="Date" syncable="YES"/>
+        <relationship name="lectures" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Lecture" inverseName="conference" inverseEntity="Lecture" syncable="YES"/>
+    </entity>
+    <entity name="Lecture" representedClassName="PRODUCT_MODULE_NAME.Lecture" syncable="YES">
+        <attribute name="endTime" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="lectureID" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="presentationURL" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="startTime" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="videoURL" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="conference" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Conference" inverseName="lectures" inverseEntity="Conference" syncable="YES"/>
+        <relationship name="presenters" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Presenter" inverseName="lectures" inverseEntity="Presenter" syncable="YES"/>
+        <relationship name="room" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Room" inverseName="lectures" inverseEntity="Room" syncable="YES"/>
+    </entity>
+    <entity name="Presenter" representedClassName="PRODUCT_MODULE_NAME.Presenter" syncable="YES">
+        <attribute name="firstName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="imageURL" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="lastName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="presenterID" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="shortBio" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="lectures" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Lecture" inverseName="presenters" inverseEntity="Lecture" syncable="YES"/>
+    </entity>
+    <entity name="Room" representedClassName="PRODUCT_MODULE_NAME.Room" syncable="YES">
+        <attribute name="roomID" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="roomName" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="lectures" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Lecture" inverseName="room" inverseEntity="Lecture" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="Conference" positionX="-63" positionY="-18" width="128" height="150"/>
+        <element name="Presenter" positionX="-54" positionY="36" width="128" height="135"/>
+        <element name="Room" positionX="-36" positionY="63" width="128" height="90"/>
+        <element name="Lecture" positionX="-18" positionY="72" width="128" height="165"/>
+    </elements>
 </model>
