@@ -19,7 +19,7 @@ class ConferencesTableViewController: UITableViewController, NSFetchedResultsCon
         var fetchRequest = NSFetchRequest(entityName: "Conference")
         fetchRequest.sortDescriptors = [NSSortDescriptor(key: "startDate", ascending: false)]
         
-        var fetchedResultsController = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: PersistanceController.sharedInstance.managedObjectContext, sectionNameKeyPath: "year", cacheName: nil)
+        var fetchedResultsController = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: CoreDataManager.sharedInstance.managedObjectContext, sectionNameKeyPath: "year", cacheName: nil)
         
         var error : NSError?
         
@@ -168,6 +168,13 @@ class ConferencesTableViewController: UITableViewController, NSFetchedResultsCon
         }
         
         return 0
+    }
+    
+    override func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        let indexPath = NSIndexPath(forRow: 0, inSection: section)
+        let conference = self.fetchedResultsController.objectAtIndexPath(indexPath) as! Conference
+        
+        return conference.year
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
