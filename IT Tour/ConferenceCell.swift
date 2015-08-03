@@ -37,6 +37,7 @@ class ConferenceCell: UITableViewCell {
     
     func loadDataFrom(conference: Conference) {
         self.conferenceID = conference.conferenceID.integerValue
+        // setup logo image view
         self.conferenceNameLabel.text = conference.conferenceName
         self.conferenceTimeLabel.text = self.generateTimeStringFrom(conference)
     }

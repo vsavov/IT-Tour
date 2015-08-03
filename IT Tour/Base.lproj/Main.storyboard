@@ -76,13 +76,13 @@
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="VarnaConf 2015" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WQw-3N-z6x">
                                             <rect key="frame" x="88" y="10" width="118" height="20"/>
                                             <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="15 August 2015" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u1S-1a-7aJ">
                                             <rect key="frame" x="88" y="35" width="102" height="17"/>
                                             <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
@@ -149,16 +149,69 @@
         <scene sceneID="VR3-el-N3E">
             <objects>
                 <tableViewController id="thp-TQ-3yN" customClass="FavoritesTableViewController" customModule="IT_Tour" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="rf4-DY-e1K">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="79" sectionHeaderHeight="22" sectionFooterHeight="22" id="rf4-DY-e1K">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <searchBar key="tableHeaderView" contentMode="redraw" placeholder="Search" id="ekL-Jx-ehB">
+                            <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            <textInputTraits key="textInputTraits"/>
+                            <connections>
+                                <outlet property="delegate" destination="thp-TQ-3yN" id="cT8-MA-bua"/>
+                            </connections>
+                        </searchBar>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="pK4-pA-QlI">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="favoriteCell" id="pK4-pA-QlI" customClass="FavoriteCell" customModule="IT_Tour" customModuleProvider="target">
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="pK4-pA-QlI" id="5aO-WY-DJu">
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KyT-ea-Qua">
+                                            <rect key="frame" x="18" y="10" width="41" height="20"/>
+                                            <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zea-hM-MKt">
+                                            <rect key="frame" x="18" y="32" width="36" height="17"/>
+                                            <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EeA-1L-PRf">
+                                            <rect key="frame" x="18" y="51" width="36" height="17"/>
+                                            <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="favorite" translatesAutoresizingMaskIntoConstraints="NO" id="W7a-oa-zEn">
+                                            <rect key="frame" x="567" y="10" width="20" height="20"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" secondItem="W7a-oa-zEn" secondAttribute="height" multiplier="1:1" id="GLR-bk-mUn"/>
+                                                <constraint firstAttribute="width" constant="20" id="dY2-5S-p8c"/>
+                                            </constraints>
+                                        </imageView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="W7a-oa-zEn" firstAttribute="top" secondItem="5aO-WY-DJu" secondAttribute="topMargin" constant="2" id="2gR-Xe-NhT"/>
+                                        <constraint firstItem="zea-hM-MKt" firstAttribute="leading" secondItem="EeA-1L-PRf" secondAttribute="leading" id="3bJ-kO-BkA"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="W7a-oa-zEn" secondAttribute="trailing" constant="5" id="7EU-HL-u7j"/>
+                                        <constraint firstItem="W7a-oa-zEn" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="zea-hM-MKt" secondAttribute="trailing" constant="10" id="Fzx-Yl-ZuG"/>
+                                        <constraint firstItem="KyT-ea-Qua" firstAttribute="top" secondItem="5aO-WY-DJu" secondAttribute="topMargin" constant="2" id="dVx-4V-Lvl"/>
+                                        <constraint firstItem="EeA-1L-PRf" firstAttribute="top" secondItem="zea-hM-MKt" secondAttribute="bottom" constant="2" id="gN3-uy-erY"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="EeA-1L-PRf" secondAttribute="bottom" constant="2" id="nVU-dq-kLg"/>
+                                        <constraint firstItem="zea-hM-MKt" firstAttribute="leading" secondItem="KyT-ea-Qua" secondAttribute="leading" id="oF8-eT-oWa"/>
+                                        <constraint firstItem="KyT-ea-Qua" firstAttribute="leading" secondItem="5aO-WY-DJu" secondAttribute="leadingMargin" constant="10" id="qkQ-gq-UUy"/>
+                                        <constraint firstItem="W7a-oa-zEn" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="KyT-ea-Qua" secondAttribute="trailing" constant="10" id="udv-Os-OoG"/>
+                                        <constraint firstItem="zea-hM-MKt" firstAttribute="top" secondItem="KyT-ea-Qua" secondAttribute="bottom" constant="2" id="wz5-8B-NBh"/>
+                                    </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="lectureConferenceNameLabel" destination="EeA-1L-PRf" id="v73-we-M8q"/>
+                                    <outlet property="lectureNameLabel" destination="KyT-ea-Qua" id="Z5a-fo-Vq1"/>
+                                    <outlet property="lectureTimeAndLocationLabel" destination="zea-hM-MKt" id="pnB-YQ-xRe"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -167,8 +220,20 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="PB5-ap-A1u"/>
+                    <connections>
+                        <outlet property="searchDisplayController" destination="5iT-1A-WFH" id="8T7-Xy-xhH"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YRO-A1-fA5" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <searchDisplayController id="5iT-1A-WFH">
+                    <connections>
+                        <outlet property="delegate" destination="thp-TQ-3yN" id="zww-wJ-Ms9"/>
+                        <outlet property="searchBar" destination="ekL-Jx-ehB" id="4RS-0m-Jgl"/>
+                        <outlet property="searchContentsController" destination="thp-TQ-3yN" id="la9-gz-UUZ"/>
+                        <outlet property="searchResultsDataSource" destination="thp-TQ-3yN" id="zZM-fR-LvG"/>
+                        <outlet property="searchResultsDelegate" destination="thp-TQ-3yN" id="1Jk-Sd-pzY"/>
+                    </connections>
+                </searchDisplayController>
             </objects>
             <point key="canvasLocation" x="1801" y="-301"/>
         </scene>
@@ -262,6 +327,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="favorite" width="20" height="20"/>
         <image name="favorites" width="28" height="26"/>
         <image name="favoritesSelected" width="28" height="26"/>
         <image name="presenters" width="28" height="25"/>

@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		491ABEE91B6F5F0A0078F796 /* BaseTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 491ABEE81B6F5F0A0078F796 /* BaseTableViewController.swift */; };
+		491ABEEC1B6F74300078F796 /* LectureCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 491ABEEB1B6F74300078F796 /* LectureCell.swift */; };
+		491ABEF01B6F79A70078F796 /* FavoriteCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 491ABEEF1B6F79A70078F796 /* FavoriteCell.swift */; };
+		491ABEF21B6F87A50078F796 /* Lecture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 491ABEF11B6F87A50078F796 /* Lecture.swift */; };
 		494EA2FF1B6D86DB00CFECAD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494EA2FE1B6D86DB00CFECAD /* AppDelegate.swift */; };
 		494EA3021B6D86DB00CFECAD /* IT_Tour.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 494EA3001B6D86DB00CFECAD /* IT_Tour.xcdatamodeld */; };
 		494EA3071B6D86DB00CFECAD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 494EA3051B6D86DB00CFECAD /* Main.storyboard */; };
@@ -16,7 +20,6 @@
 		494EA3231B6DF8B200CFECAD /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494EA3221B6DF8B200CFECAD /* CoreDataManager.swift */; };
 		494EA3251B6E8FF300CFECAD /* Room.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494EA3241B6E8FF300CFECAD /* Room.swift */; };
 		494EA3291B6E8FF400CFECAD /* Presenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494EA3281B6E8FF400CFECAD /* Presenter.swift */; };
-		494EA32B1B6E8FF400CFECAD /* Lecture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494EA32A1B6E8FF400CFECAD /* Lecture.swift */; };
 		494EA32E1B6E974000CFECAD /* ConferencesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494EA32D1B6E974000CFECAD /* ConferencesTableViewController.swift */; };
 		494EA3301B6E97CA00CFECAD /* LecturersTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494EA32F1B6E97CA00CFECAD /* LecturersTableViewController.swift */; };
 		494EA3321B6E98A200CFECAD /* FavoritesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494EA3311B6E98A200CFECAD /* FavoritesTableViewController.swift */; };
@@ -36,6 +39,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		491ABEE81B6F5F0A0078F796 /* BaseTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseTableViewController.swift; sourceTree = "<group>"; };
+		491ABEEB1B6F74300078F796 /* LectureCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LectureCell.swift; sourceTree = "<group>"; };
+		491ABEEF1B6F79A70078F796 /* FavoriteCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoriteCell.swift; sourceTree = "<group>"; };
+		491ABEF11B6F87A50078F796 /* Lecture.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Lecture.swift; sourceTree = "<group>"; };
 		494EA2F91B6D86DB00CFECAD /* IT Tour.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "IT Tour.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		494EA2FD1B6D86DB00CFECAD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		494EA2FE1B6D86DB00CFECAD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -49,7 +56,6 @@
 		494EA3221B6DF8B200CFECAD /* CoreDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		494EA3241B6E8FF300CFECAD /* Room.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Room.swift; sourceTree = "<group>"; };
 		494EA3281B6E8FF400CFECAD /* Presenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Presenter.swift; sourceTree = "<group>"; };
-		494EA32A1B6E8FF400CFECAD /* Lecture.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Lecture.swift; sourceTree = "<group>"; };
 		494EA32D1B6E974000CFECAD /* ConferencesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConferencesTableViewController.swift; sourceTree = "<group>"; };
 		494EA32F1B6E97CA00CFECAD /* LecturersTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LecturersTableViewController.swift; sourceTree = "<group>"; };
 		494EA3311B6E98A200CFECAD /* FavoritesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoritesTableViewController.swift; sourceTree = "<group>"; };
@@ -81,6 +87,31 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		491ABEEA1B6F738D0078F796 /* Favorites Screen */ = {
+			isa = PBXGroup;
+			children = (
+				491ABEEF1B6F79A70078F796 /* FavoriteCell.swift */,
+				494EA3311B6E98A200CFECAD /* FavoritesTableViewController.swift */,
+			);
+			name = "Favorites Screen";
+			sourceTree = "<group>";
+		};
+		491ABEED1B6F78F40078F796 /* Presenters Screen */ = {
+			isa = PBXGroup;
+			children = (
+				494EA32F1B6E97CA00CFECAD /* LecturersTableViewController.swift */,
+			);
+			name = "Presenters Screen";
+			sourceTree = "<group>";
+		};
+		491ABEEE1B6F79650078F796 /* Lectures Screen */ = {
+			isa = PBXGroup;
+			children = (
+				491ABEEB1B6F74300078F796 /* LectureCell.swift */,
+			);
+			name = "Lectures Screen";
+			sourceTree = "<group>";
+		};
 		494EA2F01B6D86DA00CFECAD = {
 			isa = PBXGroup;
 			children = (
@@ -103,12 +134,14 @@
 			isa = PBXGroup;
 			children = (
 				494EA2FE1B6D86DB00CFECAD /* AppDelegate.swift */,
+				491ABEE81B6F5F0A0078F796 /* BaseTableViewController.swift */,
 				494EA3371B6EAE0600CFECAD /* Conferences Screen */,
 				494EA3211B6DF88100CFECAD /* CoreData */,
-				494EA3311B6E98A200CFECAD /* FavoritesTableViewController.swift */,
+				491ABEEA1B6F738D0078F796 /* Favorites Screen */,
 				494EA3081B6D86DB00CFECAD /* Images.xcassets */,
 				494EA30A1B6D86DB00CFECAD /* LaunchScreen.xib */,
-				494EA32F1B6E97CA00CFECAD /* LecturersTableViewController.swift */,
+				491ABEEE1B6F79650078F796 /* Lectures Screen */,
+				491ABEED1B6F78F40078F796 /* Presenters Screen */,
 				494EA3051B6D86DB00CFECAD /* Main.storyboard */,
 				494EA2FC1B6D86DB00CFECAD /* Supporting Files */,
 				494EA3331B6E9A8000CFECAD /* VideosTableViewController.swift */,
@@ -156,7 +189,7 @@
 			isa = PBXGroup;
 			children = (
 				494EA3351B6EA47900CFECAD /* Conference.swift */,
-				494EA32A1B6E8FF400CFECAD /* Lecture.swift */,
+				491ABEF11B6F87A50078F796 /* Lecture.swift */,
 				494EA3281B6E8FF400CFECAD /* Presenter.swift */,
 				494EA3241B6E8FF300CFECAD /* Room.swift */,
 			);
@@ -280,15 +313,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				494EA3301B6E97CA00CFECAD /* LecturersTableViewController.swift in Sources */,
+				491ABEE91B6F5F0A0078F796 /* BaseTableViewController.swift in Sources */,
 				494EA3291B6E8FF400CFECAD /* Presenter.swift in Sources */,
 				494EA32E1B6E974000CFECAD /* ConferencesTableViewController.swift in Sources */,
 				494EA3321B6E98A200CFECAD /* FavoritesTableViewController.swift in Sources */,
 				494EA3021B6D86DB00CFECAD /* IT_Tour.xcdatamodeld in Sources */,
 				494EA2FF1B6D86DB00CFECAD /* AppDelegate.swift in Sources */,
+				491ABEEC1B6F74300078F796 /* LectureCell.swift in Sources */,
 				494EA3361B6EA47900CFECAD /* Conference.swift in Sources */,
-				494EA32B1B6E8FF400CFECAD /* Lecture.swift in Sources */,
+				491ABEF21B6F87A50078F796 /* Lecture.swift in Sources */,
 				494EA3231B6DF8B200CFECAD /* CoreDataManager.swift in Sources */,
 				494EA3341B6E9A8000CFECAD /* VideosTableViewController.swift in Sources */,
+				491ABEF01B6F79A70078F796 /* FavoriteCell.swift in Sources */,
 				494EA3251B6E8FF300CFECAD /* Room.swift in Sources */,
 				494EA3391B6EAE2C00CFECAD /* ConferenceCell.swift in Sources */,
 			);

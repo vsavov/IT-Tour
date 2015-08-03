@@ -2,7 +2,7 @@
 //  Lecture.swift
 //  IT Tour
 //
-//  Created by Vladimir Savov on 2.08.15.
+//  Created by Vladimir Savov on 3.08.15.
 //  Copyright (c) 2015 г. IT Tour. All rights reserved.
 //
 
@@ -11,13 +11,23 @@ import CoreData
 
 class Lecture: NSManagedObject {
 
-    @NSManaged var lectureID: String
-    @NSManaged var startTime: NSDate
     @NSManaged var endTime: NSDate
-    @NSManaged var videoURL: String
+    @NSManaged var lectureID: String
     @NSManaged var presentationURL: String
-    @NSManaged var presenters: NSSet
+    @NSManaged var startTime: NSDate
+    @NSManaged var videoURL: String
+    @NSManaged var isFavorite: NSNumber
+    @NSManaged var lectureName: String
     @NSManaged var conference: Conference
+    @NSManaged var presenters: NSSet
     @NSManaged var room: Room
 
+    var startingHour: NSNumber {
+        let flags = NSCalendarUnit.CalendarUnitHour
+        let components = NSCalendar.currentCalendar().components(flags, fromDate: self.startTime)
+        
+        let hourComponent = components.hour
+        
+        return NSNumber(integer: hourComponent)
+    }
 }
