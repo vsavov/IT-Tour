@@ -24,6 +24,7 @@
         <relationship name="room" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Room" inverseName="lectures" inverseEntity="Room" syncable="YES"/>
     </entity>
     <entity name="Presenter" representedClassName="PRODUCT_MODULE_NAME.Presenter" syncable="YES">
+        <attribute name="firstLetter" optional="YES" transient="YES" attributeType="String" syncable="YES"/>
         <attribute name="firstName" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="imageURL" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="lastName" optional="YES" attributeType="String" syncable="YES"/>
@@ -39,7 +40,7 @@
     <elements>
         <element name="Conference" positionX="-63" positionY="-18" width="128" height="165"/>
         <element name="Lecture" positionX="-18" positionY="72" width="128" height="210"/>
-        <element name="Presenter" positionX="-54" positionY="36" width="128" height="135"/>
+        <element name="Presenter" positionX="-54" positionY="36" width="128" height="150"/>
         <element name="Room" positionX="-36" positionY="63" width="128" height="90"/>
     </elements>
 </model>
