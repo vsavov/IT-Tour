@@ -10,8 +10,6 @@ import CoreData
 import UIKit
 
 class FavoritesTableViewController: BaseTableViewController {
-
-    // MARK: - Properties
     
     // MARK: - View lifecycle methods
     

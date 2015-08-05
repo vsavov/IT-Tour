@@ -12,6 +12,7 @@ import UIKit
 class ConferencesTableViewController: BaseTableViewController {
 
     // MARK: - Properties
+    
     var firstTimePresented: Bool = true
     
     // MARK: - View lifecycle methods

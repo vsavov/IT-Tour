@@ -10,6 +10,8 @@ import UIKit
 
 class LectureDetailsTableViewController: UITableViewController {
 
+    // MARK: - Properties
+    
     @IBOutlet weak var lectureNameLabel: UILabel!
     @IBOutlet weak var lectureTimeAndLocationLabel: UILabel!
     @IBOutlet weak var lectureConferenceNameLabel: UILabel!
