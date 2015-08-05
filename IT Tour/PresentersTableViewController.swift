@@ -15,6 +15,18 @@ class PresentersTableViewController: BaseTableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.tableView.estimatedRowHeight = 57
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "ShowPresenterInfo" {
+            let destinationController = segue.destinationViewController as! PresenterDetailsTableViewController
+            let castedSender = sender as! PresenterCell
+            
+            var presenter = MainManager.sharedInstance.presenterWithID(castedSender.presenterID)
+            destinationController.presenter = presenter
+        }
     }
     
     override func didReceiveMemoryWarning() {
@@ -24,6 +36,10 @@ class PresentersTableViewController: BaseTableViewController {
     // MARK: - UITableViewDataSource methods
     
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+        if self.searchController!.active {
+            return 1
+        }
+        
         if let count = self.fetchedResultsController.sections?.count {
             return count
         }
@@ -32,6 +48,10 @@ class PresentersTableViewController: BaseTableViewController {
     }
     
     override func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        if self.searchController!.active {
+            return nil
+        }
+        
         let indexPath = NSIndexPath(forRow: 0, inSection: section)
         let presenter = self.fetchedResultsController.objectAtIndexPath(indexPath) as! Presenter
         
@@ -39,6 +59,10 @@ class PresentersTableViewController: BaseTableViewController {
     }
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if self.searchController!.active {
+            return self.searchResults.count
+        }
+        
         let sectionInfo: NSFetchedResultsSectionInfo? = self.fetchedResultsController.sections?[section] as! NSFetchedResultsSectionInfo?
         
         if let count = sectionInfo?.objects.count {
@@ -49,7 +73,13 @@ class PresentersTableViewController: BaseTableViewController {
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let presenter = self.fetchedResultsController.objectAtIndexPath(indexPath) as! Presenter
+        let presenter: Presenter
+        
+        if self.searchController!.active {
+            presenter = self.searchResults[indexPath.row] as! Presenter
+        } else {
+            presenter = self.fetchedResultsController.objectAtIndexPath(indexPath) as! Presenter
+        }
         
         let cell = tableView.dequeueReusableCellWithIdentifier("presenterCell", forIndexPath: indexPath) as! PresenterCell
         
@@ -62,7 +92,7 @@ class PresentersTableViewController: BaseTableViewController {
     
     override func createFetchedResultsController() -> NSFetchedResultsController {
         var fetchRequest = NSFetchRequest(entityName: "Presenter")
-        fetchRequest.sortDescriptors = [NSSortDescriptor(key: "firstName", ascending: true)]
+        fetchRequest.sortDescriptors = [NSSortDescriptor(key: "firstName", ascending: true), NSSortDescriptor(key: "lastName", ascending: true)]
         
         var fetchedResultsController = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: CoreDataManager.sharedInstance.managedObjectContext, sectionNameKeyPath: "firstLetter", cacheName: nil)
         
@@ -73,5 +103,20 @@ class PresentersTableViewController: BaseTableViewController {
         }
         
         return fetchedResultsController
+    }
+    
+    override func searchTextUpdatedTo(searchString: String) {
+        var array = self.fetchedResultsController.fetchedObjects as! [Presenter]
+        
+        if count(searchString) > 0 {
+            array = array.filter { (presenter) -> Bool in
+                let firstNameRange = presenter.firstName.rangeOfString(searchString, options: NSStringCompareOptions.CaseInsensitiveSearch, range: nil, locale: nil)
+                let lastNameRange = presenter.lastName.rangeOfString(searchString, options: NSStringCompareOptions.CaseInsensitiveSearch, range: nil, locale: nil)
+                
+                return (firstNameRange != nil || lastNameRange != nil)
+            }
+        }
+        
+        self.searchResults = array
     }
 }

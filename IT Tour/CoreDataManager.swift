@@ -40,7 +40,7 @@ class CoreDataManager {
         var folderPath = fileManager.containerURLForSecurityApplicationGroupIdentifier("group.bg.it-tour.IT-Tour")!.path!
         folderPath = folderPath.stringByAppendingPathComponent("CoreData")
         
-        if fileManager.fileExistsAtPath(folderPath) {
+        if !fileManager.fileExistsAtPath(folderPath) {
             var error: NSError?
             
             assert(fileManager.createDirectoryAtPath(folderPath, withIntermediateDirectories: true, attributes: nil, error: &error), "Failed to create CoreData folder \(folderPath), error \(error!)")
@@ -49,7 +49,7 @@ class CoreDataManager {
         let storeURL = NSURL(fileURLWithPath: folderPath)!.URLByAppendingPathComponent("ITTour.sqlite")
         
         var error: NSError?
-        var store = self.persistanceStoreCoordinator.addPersistentStoreWithType(NSSQLiteStoreType, configuration: nil, URL: storeURL, options: nil, error: &error)
+        var store = persistanceStoreCoordinator.addPersistentStoreWithType(NSSQLiteStoreType, configuration: nil, URL: storeURL, options: nil, error: &error)
         assert(store != nil, "Failed to load Persistant Store! Unresolved error \(error?.localizedDescription), \(error?.userInfo)\nAttempted to create store at \(storeURL)")
         
         return persistanceStoreCoordinator
@@ -77,4 +77,96 @@ class CoreDataManager {
         }
     }
     
+    func defaultConference() -> Conference? {
+        var fetchRequest = NSFetchRequest(entityName: "Conference")
+        fetchRequest.predicate = NSPredicate(format: "isDefault == %@", true)
+        
+        var error: NSError?
+        var result = self.managedObjectContext.executeFetchRequest(fetchRequest, error: &error)
+        
+        if let unwrappedError = error {
+            NSLog("Error fetching default conference: %@", unwrappedError)
+            
+            return nil
+        }
+        
+        return result?.first as! Conference?
+    }
+    
+    func conferenceWithID(conferenceID: Int) -> Conference? {
+        var fetchRequest = NSFetchRequest(entityName: "Conference")
+        fetchRequest.predicate = NSPredicate(format: "conferenceID == %d", conferenceID)
+        
+        var error: NSError?
+        var result = self.managedObjectContext.executeFetchRequest(fetchRequest, error: &error)
+        
+        if let unwrappedError = error {
+            NSLog("Error fetching conference: %@", unwrappedError)
+            
+            return nil
+        }
+        
+        return result?.first as! Conference?
+    }
+    
+    func presenterWithID(presenterID: Int) -> Presenter? {
+        var fetchRequest = NSFetchRequest(entityName: "Presenter")
+        fetchRequest.predicate = NSPredicate(format: "presenterID == %d", presenterID)
+        
+        var error: NSError?
+        var result = self.managedObjectContext.executeFetchRequest(fetchRequest, error: &error)
+        
+        if let unwrappedError = error {
+            NSLog("Error fetching presenter: %@", unwrappedError)
+            
+            return nil
+        }
+        
+        return result?.first as! Presenter?
+    }
+    
+    func lectureWithID(lectureID: String) -> Lecture? {
+        var fetchRequest = NSFetchRequest(entityName: "Lecture")
+        fetchRequest.predicate = NSPredicate(format: "lectureID == %@", lectureID)
+        
+        var error: NSError?
+        var result = self.managedObjectContext.executeFetchRequest(fetchRequest, error: &error)
+        
+        if let unwrappedError = error {
+            NSLog("Error fetching lecture: %@", unwrappedError)
+            
+            return nil
+        }
+        
+        return result?.first as! Lecture?
+    }
+    
+    func roomWithID(roomID: Int) -> Room? {
+        var fetchRequest = NSFetchRequest(entityName: "Room")
+        fetchRequest.predicate = NSPredicate(format: "roomID == %d", roomID)
+        
+        var error: NSError?
+        var result = self.managedObjectContext.executeFetchRequest(fetchRequest, error: &error)
+        
+        if let unwrappedError = error {
+            NSLog("Error fetching room: %@", unwrappedError)
+            
+            return nil
+        }
+        
+        return result?.first as! Room?
+    }
+    
+    func changeFavoriteStatusOf(lectureID: String) -> Lecture? {
+        var lecture = self.lectureWithID(lectureID)
+        
+        if let unwrappedLecture = lecture {
+            unwrappedLecture.isFavorite = NSNumber(bool: !unwrappedLecture.isFavorite.boolValue)
+            self.save()
+            
+            return unwrappedLecture
+        }
+        
+        return nil
+    }
 }

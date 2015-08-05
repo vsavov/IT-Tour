@@ -11,13 +11,16 @@ import UIKit
 
 typealias TableViewChanges = Dictionary<NSFetchedResultsChangeType, Array<NSIndexPath>>
 
-class BaseTableViewController: UITableViewController, NSFetchedResultsControllerDelegate {
+class BaseTableViewController: UITableViewController, NSFetchedResultsControllerDelegate, UISearchBarDelegate, UISearchResultsUpdating {
 
     // MARK: - Properties
     
     lazy var fetchedResultsController: NSFetchedResultsController = {
         return self.createFetchedResultsController()
         }()
+    
+    internal var searchController: UISearchController?
+    internal var searchResults: [AnyObject] = []
     
     private var tableViewUpdates : TableViewChanges = {
         var changes = TableViewChanges()
@@ -42,6 +45,17 @@ class BaseTableViewController: UITableViewController, NSFetchedResultsController
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.tableView.rowHeight = UITableViewAutomaticDimension
+        
+        self.searchController = UISearchController(searchResultsController: nil)
+        self.searchController!.searchResultsUpdater = self
+        self.searchController!.dimsBackgroundDuringPresentation = false
+        self.searchController!.searchBar.placeholder = NSLocalizedString("Search", comment: "Search bar placeholder text")
+        
+        self.tableView.tableHeaderView = self.searchController!.searchBar
+        
+        self.definesPresentationContext = true
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -56,6 +70,10 @@ class BaseTableViewController: UITableViewController, NSFetchedResultsController
         self.tableView.reloadData()
         
         self.fetchedResultsController.delegate = self
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
     }
     
     override func viewDidDisappear(animated: Bool) {
@@ -104,7 +122,6 @@ class BaseTableViewController: UITableViewController, NSFetchedResultsController
         }
     }
     
-    
     internal func controllerWillChangeContent(controller: NSFetchedResultsController) {
         self.resetChangesTracking()
     }
@@ -119,6 +136,12 @@ class BaseTableViewController: UITableViewController, NSFetchedResultsController
         let inserted = self.tableViewUpdates[.Insert]!
         let deleted  = self.tableViewUpdates[.Delete]!
         let updated  = self.tableViewUpdates[.Update]!
+        
+        if self.searchController!.active {
+            self.resetChangesTracking()
+            
+            return
+        }
         
         self.tableView.beginUpdates()
         
@@ -144,10 +167,21 @@ class BaseTableViewController: UITableViewController, NSFetchedResultsController
         
         self.resetChangesTracking()
     }
+    
+    // MARK: - UISearchResultsUpdating methods
+    
+    func updateSearchResultsForSearchController(searchController: UISearchController) {
+        self.searchTextUpdatedTo(searchController.searchBar.text)
+        self.tableView.reloadData()
+    }
 
     // MARK: - Private methods
     
     internal func createFetchedResultsController() -> NSFetchedResultsController {
+        fatalError("This method has to be overriden!")
+    }
+    
+    internal func searchTextUpdatedTo(searchString: String) {
         fatalError("This method has to be overriden!")
     }
     

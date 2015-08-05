@@ -15,6 +15,7 @@ class FavoriteCell: UITableViewCell {
     @IBOutlet weak var lectureNameLabel: UILabel!
     @IBOutlet weak var lectureTimeAndLocationLabel: UILabel!
     @IBOutlet weak var lectureConferenceNameLabel: UILabel!
+    @IBOutlet weak var favoriteImageView: UIImageView!
     
     var lectureID: String = ""
     
@@ -40,24 +41,32 @@ class FavoriteCell: UITableViewCell {
         self.lectureNameLabel.text = lecture.lectureName
         self.lectureTimeAndLocationLabel.text = self.generateTimeAndLocationStringFrom(lecture)
         self.lectureConferenceNameLabel.text = lecture.conference.conferenceName
+        self.favoriteImageView.hidden = !lecture.isFavorite.boolValue
     }
     
     // MARK: - Private methods
     
-    func generateTimeAndLocationStringFrom(lecture: Lecture) -> String {
+    private func generateTimeAndLocationStringFrom(lecture: Lecture) -> String {
         let flags = NSCalendarUnit.CalendarUnitMinute | NSCalendarUnit.CalendarUnitHour
         let startTimeComponents = NSCalendar.currentCalendar().components(flags, fromDate: lecture.startTime)
         let endTimeComponents = NSCalendar.currentCalendar().components(flags, fromDate: lecture.endTime)
         
-        let startTimeMinutes = self.getProperTimeStringFrom(startTimeComponents.minute)
-        let startTimeHours = self.getProperTimeStringFrom(startTimeComponents.hour)
-        let endTimeMinutes = self.getProperTimeStringFrom(endTimeComponents.minute)
-        let endTimeHours = self.getProperTimeStringFrom(endTimeComponents.hour)
+        let dateFormatter = MainManager.hourDateFormatter
         
-        return "\(startTimeHours):\(startTimeMinutes)-\(endTimeHours):\(endTimeMinutes)   \(lecture.room.roomName)"
+        let startTimeHours = dateFormatter.stringFromDate(lecture.startTime)
+        let startTimeMinutes = self.getProperTimeStringFrom(startTimeComponents.minute)
+        
+        let endTimeHours = dateFormatter.stringFromDate(lecture.endTime)
+        let endTimeMinutes = self.getProperTimeStringFrom(endTimeComponents.minute)
+        
+        if let room = lecture.room {
+            return "\(startTimeHours):\(startTimeMinutes)-\(endTimeHours):\(endTimeMinutes)   \(room.roomName)"
+        }
+        
+        return "\(startTimeHours):\(startTimeMinutes)-\(endTimeHours):\(endTimeMinutes)"
     }
     
-    func getProperTimeStringFrom(integer: Int) -> String {
+    private func getProperTimeStringFrom(integer: Int) -> String {
         if integer < 10 {
             return "0\(integer)"
         }

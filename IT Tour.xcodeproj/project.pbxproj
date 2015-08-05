@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		4906189D1B6FD3E60036B7FB /* PresenterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4906189C1B6FD3E60036B7FB /* PresenterCell.swift */; };
 		4906189F1B6FD6460036B7FB /* Presenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4906189E1B6FD6460036B7FB /* Presenter.swift */; };
+		490618A21B6FDC9F0036B7FB /* LecturesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 490618A11B6FDC9F0036B7FB /* LecturesTableViewController.swift */; };
 		491ABEE91B6F5F0A0078F796 /* BaseTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 491ABEE81B6F5F0A0078F796 /* BaseTableViewController.swift */; };
 		491ABEEC1B6F74300078F796 /* LectureCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 491ABEEB1B6F74300078F796 /* LectureCell.swift */; };
 		491ABEF01B6F79A70078F796 /* FavoriteCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 491ABEEF1B6F79A70078F796 /* FavoriteCell.swift */; };
@@ -24,9 +25,13 @@
 		494EA32E1B6E974000CFECAD /* ConferencesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494EA32D1B6E974000CFECAD /* ConferencesTableViewController.swift */; };
 		494EA3301B6E97CA00CFECAD /* PresentersTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494EA32F1B6E97CA00CFECAD /* PresentersTableViewController.swift */; };
 		494EA3321B6E98A200CFECAD /* FavoritesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494EA3311B6E98A200CFECAD /* FavoritesTableViewController.swift */; };
-		494EA3341B6E9A8000CFECAD /* VideosTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494EA3331B6E9A8000CFECAD /* VideosTableViewController.swift */; };
 		494EA3361B6EA47900CFECAD /* Conference.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494EA3351B6EA47900CFECAD /* Conference.swift */; };
 		494EA3391B6EAE2C00CFECAD /* ConferenceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494EA3381B6EAE2C00CFECAD /* ConferenceCell.swift */; };
+		49BC5A391B71D6F700ED27CC /* LectureDetailsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49BC5A381B71D6F700ED27CC /* LectureDetailsTableViewController.swift */; };
+		49BC5A3C1B723A8D00ED27CC /* PresenterDetailsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49BC5A3B1B723A8D00ED27CC /* PresenterDetailsTableViewController.swift */; };
+		49BC5A3E1B72545300ED27CC /* LecturePresenterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49BC5A3D1B72545300ED27CC /* LecturePresenterCell.swift */; };
+		49D307EC1B700492005E208C /* MainManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49D307EB1B700492005E208C /* MainManager.swift */; };
+		49D307EE1B70049D005E208C /* varnaConf_updated.json in Resources */ = {isa = PBXBuildFile; fileRef = 49D307ED1B70049D005E208C /* varnaConf_updated.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,6 +47,7 @@
 /* Begin PBXFileReference section */
 		4906189C1B6FD3E60036B7FB /* PresenterCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PresenterCell.swift; sourceTree = "<group>"; };
 		4906189E1B6FD6460036B7FB /* Presenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Presenter.swift; sourceTree = "<group>"; };
+		490618A11B6FDC9F0036B7FB /* LecturesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LecturesTableViewController.swift; sourceTree = "<group>"; };
 		491ABEE81B6F5F0A0078F796 /* BaseTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseTableViewController.swift; sourceTree = "<group>"; };
 		491ABEEB1B6F74300078F796 /* LectureCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LectureCell.swift; sourceTree = "<group>"; };
 		491ABEEF1B6F79A70078F796 /* FavoriteCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoriteCell.swift; sourceTree = "<group>"; };
@@ -61,7 +67,6 @@
 		494EA32D1B6E974000CFECAD /* ConferencesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConferencesTableViewController.swift; sourceTree = "<group>"; };
 		494EA32F1B6E97CA00CFECAD /* PresentersTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PresentersTableViewController.swift; sourceTree = "<group>"; };
 		494EA3311B6E98A200CFECAD /* FavoritesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoritesTableViewController.swift; sourceTree = "<group>"; };
-		494EA3331B6E9A8000CFECAD /* VideosTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideosTableViewController.swift; sourceTree = "<group>"; };
 		494EA3351B6EA47900CFECAD /* Conference.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Conference.swift; sourceTree = "<group>"; };
 		494EA3381B6EAE2C00CFECAD /* ConferenceCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConferenceCell.swift; sourceTree = "<group>"; };
 		494EA33B1B6EB32400CFECAD /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
@@ -69,6 +74,11 @@
 		494EA33D1B6EB99300CFECAD /* bg */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = bg; path = bg.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		494EA33E1B6EB99300CFECAD /* bg */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = bg; path = bg.lproj/Main.strings; sourceTree = "<group>"; };
 		494EA3401B6EB9A200CFECAD /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		49BC5A381B71D6F700ED27CC /* LectureDetailsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LectureDetailsTableViewController.swift; sourceTree = "<group>"; };
+		49BC5A3B1B723A8D00ED27CC /* PresenterDetailsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PresenterDetailsTableViewController.swift; sourceTree = "<group>"; };
+		49BC5A3D1B72545300ED27CC /* LecturePresenterCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LecturePresenterCell.swift; sourceTree = "<group>"; };
+		49D307EB1B700492005E208C /* MainManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainManager.swift; sourceTree = "<group>"; };
+		49D307ED1B70049D005E208C /* varnaConf_updated.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = varnaConf_updated.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,14 +99,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		490618A01B6FDADB0036B7FB /* Videos Screen */ = {
-			isa = PBXGroup;
-			children = (
-				494EA3331B6E9A8000CFECAD /* VideosTableViewController.swift */,
-			);
-			name = "Videos Screen";
-			sourceTree = "<group>";
-		};
 		491ABEEA1B6F738D0078F796 /* Favorites Screen */ = {
 			isa = PBXGroup;
 			children = (
@@ -119,6 +121,7 @@
 			isa = PBXGroup;
 			children = (
 				491ABEEB1B6F74300078F796 /* LectureCell.swift */,
+				490618A11B6FDC9F0036B7FB /* LecturesTableViewController.swift */,
 			);
 			name = "Lectures Screen";
 			sourceTree = "<group>";
@@ -151,11 +154,14 @@
 				491ABEEA1B6F738D0078F796 /* Favorites Screen */,
 				494EA3081B6D86DB00CFECAD /* Images.xcassets */,
 				494EA30A1B6D86DB00CFECAD /* LaunchScreen.xib */,
+				49BC5A371B71D6D800ED27CC /* Lecture Details Screen */,
 				491ABEEE1B6F79650078F796 /* Lectures Screen */,
 				494EA3051B6D86DB00CFECAD /* Main.storyboard */,
+				49D307EB1B700492005E208C /* MainManager.swift */,
+				49BC5A3A1B723A2A00ED27CC /* Presenter Details Screen */,
 				491ABEED1B6F78F40078F796 /* Presenters Screen */,
 				494EA2FC1B6D86DB00CFECAD /* Supporting Files */,
-				490618A01B6FDADB0036B7FB /* Videos Screen */,
+				49D307ED1B70049D005E208C /* varnaConf_updated.json */,
 			);
 			path = "IT Tour";
 			sourceTree = "<group>";
@@ -214,6 +220,23 @@
 				494EA32D1B6E974000CFECAD /* ConferencesTableViewController.swift */,
 			);
 			name = "Conferences Screen";
+			sourceTree = "<group>";
+		};
+		49BC5A371B71D6D800ED27CC /* Lecture Details Screen */ = {
+			isa = PBXGroup;
+			children = (
+				49BC5A381B71D6F700ED27CC /* LectureDetailsTableViewController.swift */,
+				49BC5A3D1B72545300ED27CC /* LecturePresenterCell.swift */,
+			);
+			name = "Lecture Details Screen";
+			sourceTree = "<group>";
+		};
+		49BC5A3A1B723A2A00ED27CC /* Presenter Details Screen */ = {
+			isa = PBXGroup;
+			children = (
+				49BC5A3B1B723A8D00ED27CC /* PresenterDetailsTableViewController.swift */,
+			);
+			name = "Presenter Details Screen";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -305,6 +328,7 @@
 			files = (
 				494EA3071B6D86DB00CFECAD /* Main.storyboard in Resources */,
 				494EA30C1B6D86DB00CFECAD /* LaunchScreen.xib in Resources */,
+				49D307EE1B70049D005E208C /* varnaConf_updated.json in Resources */,
 				494EA3091B6D86DB00CFECAD /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -324,6 +348,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				494EA3301B6E97CA00CFECAD /* PresentersTableViewController.swift in Sources */,
+				49BC5A3E1B72545300ED27CC /* LecturePresenterCell.swift in Sources */,
+				49BC5A391B71D6F700ED27CC /* LectureDetailsTableViewController.swift in Sources */,
 				491ABEE91B6F5F0A0078F796 /* BaseTableViewController.swift in Sources */,
 				4906189F1B6FD6460036B7FB /* Presenter.swift in Sources */,
 				494EA32E1B6E974000CFECAD /* ConferencesTableViewController.swift in Sources */,
@@ -333,9 +359,11 @@
 				494EA2FF1B6D86DB00CFECAD /* AppDelegate.swift in Sources */,
 				491ABEEC1B6F74300078F796 /* LectureCell.swift in Sources */,
 				494EA3361B6EA47900CFECAD /* Conference.swift in Sources */,
+				49BC5A3C1B723A8D00ED27CC /* PresenterDetailsTableViewController.swift in Sources */,
 				491ABEF21B6F87A50078F796 /* Lecture.swift in Sources */,
 				494EA3231B6DF8B200CFECAD /* CoreDataManager.swift in Sources */,
-				494EA3341B6E9A8000CFECAD /* VideosTableViewController.swift in Sources */,
+				49D307EC1B700492005E208C /* MainManager.swift in Sources */,
+				490618A21B6FDC9F0036B7FB /* LecturesTableViewController.swift in Sources */,
 				491ABEF01B6F79A70078F796 /* FavoriteCell.swift in Sources */,
 				494EA3251B6E8FF300CFECAD /* Room.swift in Sources */,
 				494EA3391B6EAE2C00CFECAD /* ConferenceCell.swift in Sources */,
@@ -474,7 +502,7 @@
 				INFOPLIST_FILE = "IT Tour/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "0d566548-009e-4e43-8fce-d5ff150a8a43";
 			};
 			name = Debug;
 		};
@@ -487,7 +515,7 @@
 				INFOPLIST_FILE = "IT Tour/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "0d566548-009e-4e43-8fce-d5ff150a8a43";
 			};
 			name = Release;
 		};

@@ -13,21 +13,20 @@ class Lecture: NSManagedObject {
 
     @NSManaged var endTime: NSDate
     @NSManaged var lectureID: String
-    @NSManaged var presentationURL: String
+    @NSManaged var presentationURL: String?
     @NSManaged var startTime: NSDate
-    @NSManaged var videoURL: String
+    @NSManaged var videoURL: String?
     @NSManaged var isFavorite: NSNumber
     @NSManaged var lectureName: String
     @NSManaged var conference: Conference
-    @NSManaged var presenters: NSSet
-    @NSManaged var room: Room
+    @NSManaged var presenters: NSSet?
+    @NSManaged var room: Room?
 
-    var startingHour: NSNumber {
-        let flags = NSCalendarUnit.CalendarUnitHour
-        let components = NSCalendar.currentCalendar().components(flags, fromDate: self.startTime)
+    var startingHour: String {
+        let dateFormatter = MainManager.hourDateFormatter
         
-        let hourComponent = components.hour
+        let startTimeHours = dateFormatter.stringFromDate(self.startTime)
         
-        return NSNumber(integer: hourComponent)
+        return startTimeHours
     }
 }

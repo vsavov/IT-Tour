@@ -1,17 +1,23 @@
 //
-//  FavoritesTableViewController.swift
+//  LecturesTableViewController.swift
 //  IT Tour
 //
-//  Created by Vladimir Savov on 2.08.15.
+//  Created by Vladimir Savov on 3.08.15.
 //  Copyright (c) 2015 г. IT Tour. All rights reserved.
 //
 
 import CoreData
 import UIKit
 
-class FavoritesTableViewController: BaseTableViewController {
+class LecturesTableViewController: BaseTableViewController {
 
     // MARK: - Properties
+    
+    @IBOutlet weak var lectureNameLabel: UILabel!
+    @IBOutlet weak var lectureTimeAndLocationLabel: UILabel!
+    @IBOutlet weak var favoriteImageView: UIImageView!
+    
+    var conferenceID: Int = -1
     
     // MARK: - View lifecycle methods
     
@@ -24,7 +30,7 @@ class FavoritesTableViewController: BaseTableViewController {
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "ShowLectureDetails" {
             let destinationController = segue.destinationViewController as! LectureDetailsTableViewController
-            let castedSender = sender as! FavoriteCell
+            let castedSender = sender as! LectureCell
             
             var lecture = MainManager.sharedInstance.lectureWithID(castedSender.lectureID)
             destinationController.lecture = lecture
@@ -38,7 +44,26 @@ class FavoritesTableViewController: BaseTableViewController {
     // MARK: - UITableViewDataSource methods
     
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        return 1
+        if self.searchController!.active {
+            return 1
+        }
+        
+        if let count = self.fetchedResultsController.sections?.count {
+            return count
+        }
+        
+        return 0
+    }
+    
+    override func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        if self.searchController!.active {
+            return nil
+        }
+        
+        let indexPath = NSIndexPath(forRow: 0, inSection: section)
+        let lecture = self.fetchedResultsController.objectAtIndexPath(indexPath) as! Lecture
+        
+        return self.generateSectionHeaderFrom(lecture.startingHour)
     }
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -46,7 +71,9 @@ class FavoritesTableViewController: BaseTableViewController {
             return self.searchResults.count
         }
         
-        if let count = self.fetchedResultsController.fetchedObjects?.count {
+        let sectionInfo: NSFetchedResultsSectionInfo? = self.fetchedResultsController.sections?[section] as! NSFetchedResultsSectionInfo?
+        
+        if let count = sectionInfo?.objects.count {
             return count
         }
         
@@ -62,7 +89,7 @@ class FavoritesTableViewController: BaseTableViewController {
             lecture = self.fetchedResultsController.objectAtIndexPath(indexPath) as! Lecture
         }
         
-        let cell = tableView.dequeueReusableCellWithIdentifier("favoriteCell", forIndexPath: indexPath) as! FavoriteCell
+        let cell = tableView.dequeueReusableCellWithIdentifier("lectureCell", forIndexPath: indexPath) as! LectureCell
         
         cell.loadDataFrom(lecture)
         
@@ -73,16 +100,16 @@ class FavoritesTableViewController: BaseTableViewController {
     
     override func createFetchedResultsController() -> NSFetchedResultsController {
         var fetchRequest = NSFetchRequest(entityName: "Lecture")
-        fetchRequest.predicate = NSPredicate(format: "isFavorite == %@", true)
-        fetchRequest.sortDescriptors = [NSSortDescriptor(key: "startTime", ascending: true)]
-        fetchRequest.relationshipKeyPathsForPrefetching = ["conference", "room"]
+        fetchRequest.predicate = NSPredicate(format: "conference.conferenceID == %d", self.conferenceID)
+        fetchRequest.sortDescriptors = [NSSortDescriptor(key: "startTime", ascending: true), NSSortDescriptor(key: "room.roomName", ascending: true)]
+        fetchRequest.relationshipKeyPathsForPrefetching = ["room"]
         
-        var fetchedResultsController = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: CoreDataManager.sharedInstance.managedObjectContext, sectionNameKeyPath: nil, cacheName: nil)
+        var fetchedResultsController = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: CoreDataManager.sharedInstance.managedObjectContext, sectionNameKeyPath: "startingHour", cacheName: nil)
         
         var error : NSError?
         
-        if fetchedResultsController.performFetch(&error) == false {
-            NSLog("Failed to load favorite lectures with error \(error)")
+        if !fetchedResultsController.performFetch(&error) {
+            NSLog("Failed to load lectures with error \(error)")
         }
         
         return fetchedResultsController
@@ -100,5 +127,9 @@ class FavoritesTableViewController: BaseTableViewController {
         }
         
         self.searchResults = array
+    }
+    
+    private func generateSectionHeaderFrom(hours: String) -> String {
+        return "\(hours):00"
     }
 }
