@@ -34,8 +34,15 @@ class PresenterCell: UITableViewCell {
     // MARK: - Public methods
     
     func loadDataFrom(presenter: Presenter) {
-        self.presenterID = presenter.presenterID.integerValue
-        // setup logo image view
+        if let presenterID = presenter.presenterID {
+            self.presenterID = presenterID.integerValue
+        } else {
+            self.prepareForReuse()
+            
+            return
+        }
+        
+        self.presenterImageView.image = presenter.getImage()
         self.presenterNameLabel.text = "\(presenter.firstName) \(presenter.lastName)"
     }
 }

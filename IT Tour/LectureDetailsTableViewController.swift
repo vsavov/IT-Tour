@@ -155,7 +155,7 @@ class LectureDetailsTableViewController: UITableViewController {
     private func updateUI() {
         self.lectureNameLabel.text = self.lecture?.lectureName
         self.lectureTimeAndLocationLabel.text = self.generateTimeAndLocationStringFrom(self.lecture)
-        self.lectureConferenceNameLabel.text = self.lecture?.conference.conferenceName
+        self.lectureConferenceNameLabel.text = self.lecture?.conference?.conferenceName
         
         if let unwrappedLecture = self.lecture {
             self.favoriteImageView.hidden = !unwrappedLecture.isFavorite.boolValue
@@ -174,23 +174,31 @@ class LectureDetailsTableViewController: UITableViewController {
             return ""
         }
         
-        let flags = NSCalendarUnit.CalendarUnitMinute | NSCalendarUnit.CalendarUnitHour
-        let startTimeComponents = NSCalendar.currentCalendar().components(flags, fromDate: lecture!.startTime)
-        let endTimeComponents = NSCalendar.currentCalendar().components(flags, fromDate: lecture!.endTime)
-        
-        let dateFormatter = MainManager.hourDateFormatter
-        
-        let startTimeHours = dateFormatter.stringFromDate(lecture!.startTime)
-        let startTimeMinutes = self.getProperTimeStringFrom(startTimeComponents.minute)
-        
-        let endTimeHours = dateFormatter.stringFromDate(lecture!.endTime)
-        let endTimeMinutes = self.getProperTimeStringFrom(endTimeComponents.minute)
-        
-        if let room = lecture!.room {
-            return "\(startTimeHours):\(startTimeMinutes)-\(endTimeHours):\(endTimeMinutes)   \(room.roomName)"
+        if let unwrappedStartTime = lecture?.startTime, let unwrappedEndTime = lecture?.endTime {
+            let flags = NSCalendarUnit.CalendarUnitMinute | NSCalendarUnit.CalendarUnitHour
+            let startTimeComponents = NSCalendar.currentCalendar().components(flags, fromDate: unwrappedStartTime)
+            let endTimeComponents = NSCalendar.currentCalendar().components(flags, fromDate: unwrappedEndTime)
+            
+            let dateFormatter = MainManager.hourDateFormatter
+            
+            let startTimeHours = dateFormatter.stringFromDate(unwrappedStartTime)
+            let startTimeMinutes = self.getProperTimeStringFrom(startTimeComponents.minute)
+            
+            let endTimeHours = dateFormatter.stringFromDate(unwrappedEndTime)
+            let endTimeMinutes = self.getProperTimeStringFrom(endTimeComponents.minute)
+            
+            if let roomName = lecture?.room?.roomName {
+                return "\(startTimeHours):\(startTimeMinutes)-\(endTimeHours):\(endTimeMinutes)   \(roomName)"
+            }
+            
+            return "\(startTimeHours):\(startTimeMinutes)-\(endTimeHours):\(endTimeMinutes)"
         }
         
-        return "\(startTimeHours):\(startTimeMinutes)-\(endTimeHours):\(endTimeMinutes)"
+        if let roomName = lecture?.room?.roomName {
+            return roomName
+        }
+        
+        return ""
     }
     
     private func getProperTimeStringFrom(integer: Int) -> String {
@@ -203,7 +211,7 @@ class LectureDetailsTableViewController: UITableViewController {
     
     private func changeFavoriteStatus() {
         self.favoriteImageView.hidden = !self.favoriteImageView.hidden
-        self.lecture = MainManager.sharedInstance.changeFavoriteStatusOf(lecture!.lectureID)
+        self.lecture = MainManager.sharedInstance.changeFavoriteStatusOf(lecture!.lectureID!)
         
         self.tableView.beginUpdates()
         

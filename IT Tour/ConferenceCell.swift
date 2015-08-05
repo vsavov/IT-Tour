@@ -36,7 +36,14 @@ class ConferenceCell: UITableViewCell {
     // MARK: - Public methods
     
     func loadDataFrom(conference: Conference) {
-        self.conferenceID = conference.conferenceID.integerValue
+        if let conferenceID = conference.conferenceID {
+            self.conferenceID = conferenceID.integerValue
+        } else {
+            self.prepareForReuse()
+            
+            return
+        }
+        
         // setup logo image view
         self.conferenceNameLabel.text = conference.conferenceName
         self.conferenceTimeLabel.text = self.generateTimeStringFrom(conference)
@@ -45,18 +52,22 @@ class ConferenceCell: UITableViewCell {
     // MARK: - Private methods
     
     func generateTimeStringFrom(conference: Conference) -> String {
-        let flags = NSCalendarUnit.CalendarUnitDay | NSCalendarUnit.CalendarUnitMonth | NSCalendarUnit.CalendarUnitYear
-        let startDateComponents = NSCalendar.currentCalendar().components(flags, fromDate: conference.startDate)
-        let endDateComponents = NSCalendar.currentCalendar().components(flags, fromDate: conference.endDate)
-        
-        if startDateComponents.month == endDateComponents.month {
-            if startDateComponents.day == endDateComponents.day {
-                return "\(endDateComponents.day).\(endDateComponents.month).\(endDateComponents.year)"
+        if let unwrappedStartDate = conference.startDate, let unwrappedEndDate = conference.endDate {
+            let flags = NSCalendarUnit.CalendarUnitDay | NSCalendarUnit.CalendarUnitMonth | NSCalendarUnit.CalendarUnitYear
+            let startDateComponents = NSCalendar.currentCalendar().components(flags, fromDate: unwrappedStartDate)
+            let endDateComponents = NSCalendar.currentCalendar().components(flags, fromDate: unwrappedEndDate)
+            
+            if startDateComponents.month == endDateComponents.month {
+                if startDateComponents.day == endDateComponents.day {
+                    return "\(endDateComponents.day).\(endDateComponents.month).\(endDateComponents.year)"
+                }
+                
+                return "\(startDateComponents.day)-\(endDateComponents.day).\(endDateComponents.month).\(endDateComponents.year)"
             }
             
-            return "\(startDateComponents.day)-\(endDateComponents.day).\(endDateComponents.month).\(endDateComponents.year)"
+            return "\(startDateComponents.day).\(startDateComponents.month)-\(endDateComponents.day).\(endDateComponents.month).\(endDateComponents.year)"
         }
         
-        return "\(startDateComponents.day).\(startDateComponents.month)-\(endDateComponents.day).\(endDateComponents.month).\(endDateComponents.year)"
+        return ""
     }
 }

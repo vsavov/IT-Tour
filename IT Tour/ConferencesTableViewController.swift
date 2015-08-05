@@ -132,7 +132,7 @@ class ConferencesTableViewController: BaseTableViewController {
         
         if count(searchString) > 0 {
             array = array.filter { (conference) -> Bool in
-                let nameRange = conference.conferenceName.rangeOfString(searchString, options: NSStringCompareOptions.CaseInsensitiveSearch, range: nil, locale: nil)
+                let nameRange = conference.conferenceName?.rangeOfString(searchString, options: NSStringCompareOptions.CaseInsensitiveSearch, range: nil, locale: nil)
                 
                 return nameRange != nil
             }

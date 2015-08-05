@@ -82,10 +82,10 @@ class MainManager {
                 conference!.conferenceID = confID
             }
             
-            conference!.conferenceName = conf["ConferenceName"] as! String
-            conference!.logoURL = conf["LogoURL"] as! String
-            conference!.startDate = self.dateFromString(conf["StartDate"] as! String)
-            conference!.endDate = self.dateFromString(conf["EndDate"] as! String)
+            conference!.conferenceName = conf["ConferenceName"] as? String
+            conference!.logoURL = conf["LogoURL"] as? String
+            conference!.startDate = self.dateFromString(conf["StartDate"] as? String)
+            conference!.endDate = self.dateFromString(conf["EndDate"] as? String)
             conference!.isDefault = confID.integerValue == defaultConferenceID.integerValue
             
             let lectures = self.parseLecturesJSON(conf["Lectures"] as! JSONArray)
@@ -110,9 +110,9 @@ class MainManager {
                 lecture!.lectureID = lectureID
             }
             
-            lecture!.lectureName = lect["LectureName"] as! String
-            lecture!.startTime = self.dateFromString(lect["StartTime"] as! String)
-            lecture!.endTime = self.dateFromString(lect["EndTime"] as! String)
+            lecture!.lectureName = lect["LectureName"] as? String
+            lecture!.startTime = self.dateFromString(lect["StartTime"] as? String)
+            lecture!.endTime = self.dateFromString(lect["EndTime"] as? String)
             
             if let roomID = lect["RoomID"] as? NSNumber {
                 var fetchRequest = NSFetchRequest(entityName: "Room")
@@ -154,10 +154,10 @@ class MainManager {
                 presenter!.presenterID = prtID
             }
             
-            presenter!.firstName = prt["PresenterFirstName"] as! String
-            presenter!.lastName = prt["PresenterLastName"] as! String
-            presenter!.imageURL = prt["PresenterImageURL"] as! String
-            presenter!.shortBio = prt["PresenterDescription"] as! String
+            presenter!.firstName = prt["PresenterFirstName"] as? String
+            presenter!.lastName = prt["PresenterLastName"] as? String
+            presenter!.imageURL = prt["PresenterImageURL"] as? String
+            presenter!.shortBio = prt["PresenterDescription"] as? String
         }
     }
     
@@ -173,11 +173,15 @@ class MainManager {
                 room!.roomID = rmID
             }
             
-            room!.roomName = rm["RoomName"] as! String
+            room!.roomName = rm["RoomName"] as? String
         }
     }
     
-    func dateFromString(dateString: String) -> NSDate {
-        return MainManager.parsingDateFormatter.dateFromString(dateString)!
+    func dateFromString(dateString: String?) -> NSDate? {
+        if let unwrappedDateString = dateString {
+            return MainManager.parsingDateFormatter.dateFromString(unwrappedDateString)
+        }
+        
+        return nil
     }
 }

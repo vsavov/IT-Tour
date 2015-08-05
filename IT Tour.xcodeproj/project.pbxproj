@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		4906189D1B6FD3E60036B7FB /* PresenterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4906189C1B6FD3E60036B7FB /* PresenterCell.swift */; };
-		4906189F1B6FD6460036B7FB /* Presenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4906189E1B6FD6460036B7FB /* Presenter.swift */; };
 		490618A21B6FDC9F0036B7FB /* LecturesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 490618A11B6FDC9F0036B7FB /* LecturesTableViewController.swift */; };
 		491ABEE91B6F5F0A0078F796 /* BaseTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 491ABEE81B6F5F0A0078F796 /* BaseTableViewController.swift */; };
 		491ABEEC1B6F74300078F796 /* LectureCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 491ABEEB1B6F74300078F796 /* LectureCell.swift */; };
@@ -30,6 +29,10 @@
 		49BC5A391B71D6F700ED27CC /* LectureDetailsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49BC5A381B71D6F700ED27CC /* LectureDetailsTableViewController.swift */; };
 		49BC5A3C1B723A8D00ED27CC /* PresenterDetailsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49BC5A3B1B723A8D00ED27CC /* PresenterDetailsTableViewController.swift */; };
 		49BC5A3E1B72545300ED27CC /* LecturePresenterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49BC5A3D1B72545300ED27CC /* LecturePresenterCell.swift */; };
+		49BC5A411B726E8200ED27CC /* ConferenceExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49BC5A401B726E8200ED27CC /* ConferenceExtension.swift */; };
+		49BC5A431B726EB400ED27CC /* LectureExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49BC5A421B726EB400ED27CC /* LectureExtension.swift */; };
+		49BC5A451B726EDD00ED27CC /* PresenterExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49BC5A441B726EDD00ED27CC /* PresenterExtension.swift */; };
+		49BC5A471B726F2000ED27CC /* Presenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49BC5A461B726F2000ED27CC /* Presenter.swift */; };
 		49D307EC1B700492005E208C /* MainManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49D307EB1B700492005E208C /* MainManager.swift */; };
 		49D307EE1B70049D005E208C /* varnaConf_updated.json in Resources */ = {isa = PBXBuildFile; fileRef = 49D307ED1B70049D005E208C /* varnaConf_updated.json */; };
 /* End PBXBuildFile section */
@@ -46,7 +49,6 @@
 
 /* Begin PBXFileReference section */
 		4906189C1B6FD3E60036B7FB /* PresenterCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PresenterCell.swift; sourceTree = "<group>"; };
-		4906189E1B6FD6460036B7FB /* Presenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Presenter.swift; sourceTree = "<group>"; };
 		490618A11B6FDC9F0036B7FB /* LecturesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LecturesTableViewController.swift; sourceTree = "<group>"; };
 		491ABEE81B6F5F0A0078F796 /* BaseTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseTableViewController.swift; sourceTree = "<group>"; };
 		491ABEEB1B6F74300078F796 /* LectureCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LectureCell.swift; sourceTree = "<group>"; };
@@ -77,6 +79,10 @@
 		49BC5A381B71D6F700ED27CC /* LectureDetailsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LectureDetailsTableViewController.swift; sourceTree = "<group>"; };
 		49BC5A3B1B723A8D00ED27CC /* PresenterDetailsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PresenterDetailsTableViewController.swift; sourceTree = "<group>"; };
 		49BC5A3D1B72545300ED27CC /* LecturePresenterCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LecturePresenterCell.swift; sourceTree = "<group>"; };
+		49BC5A401B726E8200ED27CC /* ConferenceExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConferenceExtension.swift; sourceTree = "<group>"; };
+		49BC5A421B726EB400ED27CC /* LectureExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LectureExtension.swift; sourceTree = "<group>"; };
+		49BC5A441B726EDD00ED27CC /* PresenterExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PresenterExtension.swift; sourceTree = "<group>"; };
+		49BC5A461B726F2000ED27CC /* Presenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Presenter.swift; sourceTree = "<group>"; };
 		49D307EB1B700492005E208C /* MainManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainManager.swift; sourceTree = "<group>"; };
 		49D307ED1B70049D005E208C /* varnaConf_updated.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = varnaConf_updated.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -196,6 +202,7 @@
 			isa = PBXGroup;
 			children = (
 				494EA3221B6DF8B200CFECAD /* CoreDataManager.swift */,
+				49BC5A3F1B726E6500ED27CC /* Extensions */,
 				494EA32C1B6E900100CFECAD /* Generated */,
 				494EA3001B6D86DB00CFECAD /* IT_Tour.xcdatamodeld */,
 			);
@@ -207,7 +214,7 @@
 			children = (
 				494EA3351B6EA47900CFECAD /* Conference.swift */,
 				491ABEF11B6F87A50078F796 /* Lecture.swift */,
-				4906189E1B6FD6460036B7FB /* Presenter.swift */,
+				49BC5A461B726F2000ED27CC /* Presenter.swift */,
 				494EA3241B6E8FF300CFECAD /* Room.swift */,
 			);
 			name = Generated;
@@ -237,6 +244,16 @@
 				49BC5A3B1B723A8D00ED27CC /* PresenterDetailsTableViewController.swift */,
 			);
 			name = "Presenter Details Screen";
+			sourceTree = "<group>";
+		};
+		49BC5A3F1B726E6500ED27CC /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				49BC5A401B726E8200ED27CC /* ConferenceExtension.swift */,
+				49BC5A421B726EB400ED27CC /* LectureExtension.swift */,
+				49BC5A441B726EDD00ED27CC /* PresenterExtension.swift */,
+			);
+			name = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -351,22 +368,25 @@
 				49BC5A3E1B72545300ED27CC /* LecturePresenterCell.swift in Sources */,
 				49BC5A391B71D6F700ED27CC /* LectureDetailsTableViewController.swift in Sources */,
 				491ABEE91B6F5F0A0078F796 /* BaseTableViewController.swift in Sources */,
-				4906189F1B6FD6460036B7FB /* Presenter.swift in Sources */,
 				494EA32E1B6E974000CFECAD /* ConferencesTableViewController.swift in Sources */,
+				49BC5A451B726EDD00ED27CC /* PresenterExtension.swift in Sources */,
 				494EA3321B6E98A200CFECAD /* FavoritesTableViewController.swift in Sources */,
 				494EA3021B6D86DB00CFECAD /* IT_Tour.xcdatamodeld in Sources */,
 				4906189D1B6FD3E60036B7FB /* PresenterCell.swift in Sources */,
 				494EA2FF1B6D86DB00CFECAD /* AppDelegate.swift in Sources */,
+				49BC5A471B726F2000ED27CC /* Presenter.swift in Sources */,
 				491ABEEC1B6F74300078F796 /* LectureCell.swift in Sources */,
 				494EA3361B6EA47900CFECAD /* Conference.swift in Sources */,
 				49BC5A3C1B723A8D00ED27CC /* PresenterDetailsTableViewController.swift in Sources */,
 				491ABEF21B6F87A50078F796 /* Lecture.swift in Sources */,
 				494EA3231B6DF8B200CFECAD /* CoreDataManager.swift in Sources */,
 				49D307EC1B700492005E208C /* MainManager.swift in Sources */,
+				49BC5A431B726EB400ED27CC /* LectureExtension.swift in Sources */,
 				490618A21B6FDC9F0036B7FB /* LecturesTableViewController.swift in Sources */,
 				491ABEF01B6F79A70078F796 /* FavoriteCell.swift in Sources */,
 				494EA3251B6E8FF300CFECAD /* Room.swift in Sources */,
 				494EA3391B6EAE2C00CFECAD /* ConferenceCell.swift in Sources */,
+				49BC5A411B726E8200ED27CC /* ConferenceExtension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -120,7 +120,7 @@ class LecturesTableViewController: BaseTableViewController {
         
         if count(searchString) > 0 {
             array = array.filter { (lecture) -> Bool in
-                let topicRange = lecture.lectureName.rangeOfString(searchString, options: NSStringCompareOptions.CaseInsensitiveSearch, range: nil, locale: nil)
+                let topicRange = lecture.lectureName?.rangeOfString(searchString, options: NSStringCompareOptions.CaseInsensitiveSearch, range: nil, locale: nil)
                 
                 return topicRange != nil
             }
@@ -129,7 +129,11 @@ class LecturesTableViewController: BaseTableViewController {
         self.searchResults = array
     }
     
-    private func generateSectionHeaderFrom(hours: String) -> String {
-        return "\(hours):00"
+    private func generateSectionHeaderFrom(hours: String?) -> String {
+        if let unwrappedHours = hours {
+            return "\(hours):00"
+        }
+        
+        return ""
     }
 }

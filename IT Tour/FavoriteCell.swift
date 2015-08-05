@@ -37,33 +37,48 @@ class FavoriteCell: UITableViewCell {
     // MARK: - Public methods
     
     func loadDataFrom(lecture: Lecture) {
-        self.lectureID = lecture.lectureID
+        if let lectureID = lecture.lectureID {
+            self.lectureID = lectureID
+        } else {
+            self.prepareForReuse()
+            
+            return
+        }
+        
         self.lectureNameLabel.text = lecture.lectureName
         self.lectureTimeAndLocationLabel.text = self.generateTimeAndLocationStringFrom(lecture)
-        self.lectureConferenceNameLabel.text = lecture.conference.conferenceName
+        self.lectureConferenceNameLabel.text = lecture.conference?.conferenceName
         self.favoriteImageView.hidden = !lecture.isFavorite.boolValue
     }
     
     // MARK: - Private methods
     
     private func generateTimeAndLocationStringFrom(lecture: Lecture) -> String {
-        let flags = NSCalendarUnit.CalendarUnitMinute | NSCalendarUnit.CalendarUnitHour
-        let startTimeComponents = NSCalendar.currentCalendar().components(flags, fromDate: lecture.startTime)
-        let endTimeComponents = NSCalendar.currentCalendar().components(flags, fromDate: lecture.endTime)
-        
-        let dateFormatter = MainManager.hourDateFormatter
-        
-        let startTimeHours = dateFormatter.stringFromDate(lecture.startTime)
-        let startTimeMinutes = self.getProperTimeStringFrom(startTimeComponents.minute)
-        
-        let endTimeHours = dateFormatter.stringFromDate(lecture.endTime)
-        let endTimeMinutes = self.getProperTimeStringFrom(endTimeComponents.minute)
-        
-        if let room = lecture.room {
-            return "\(startTimeHours):\(startTimeMinutes)-\(endTimeHours):\(endTimeMinutes)   \(room.roomName)"
+        if let unwrappedStartTime = lecture.startTime, let unwrappedEndTime = lecture.endTime {
+            let flags = NSCalendarUnit.CalendarUnitMinute | NSCalendarUnit.CalendarUnitHour
+            let startTimeComponents = NSCalendar.currentCalendar().components(flags, fromDate: unwrappedStartTime)
+            let endTimeComponents = NSCalendar.currentCalendar().components(flags, fromDate: unwrappedEndTime)
+            
+            let dateFormatter = MainManager.hourDateFormatter
+            
+            let startTimeHours = dateFormatter.stringFromDate(unwrappedStartTime)
+            let startTimeMinutes = self.getProperTimeStringFrom(startTimeComponents.minute)
+            
+            let endTimeHours = dateFormatter.stringFromDate(unwrappedEndTime)
+            let endTimeMinutes = self.getProperTimeStringFrom(endTimeComponents.minute)
+            
+            if let roomName = lecture.room?.roomName {
+                return "\(startTimeHours):\(startTimeMinutes)-\(endTimeHours):\(endTimeMinutes)   \(roomName)"
+            }
+            
+            return "\(startTimeHours):\(startTimeMinutes)-\(endTimeHours):\(endTimeMinutes)"
         }
         
-        return "\(startTimeHours):\(startTimeMinutes)-\(endTimeHours):\(endTimeMinutes)"
+        if let roomName = lecture.room?.roomName {
+            return roomName
+        }
+        
+        return ""
     }
     
     private func getProperTimeStringFrom(integer: Int) -> String {

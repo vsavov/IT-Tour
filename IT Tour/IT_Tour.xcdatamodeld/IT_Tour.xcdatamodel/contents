@@ -26,6 +26,7 @@
     <entity name="Presenter" representedClassName="IT_Tour.Presenter" syncable="YES">
         <attribute name="firstLetter" optional="YES" transient="YES" attributeType="String" syncable="YES"/>
         <attribute name="firstName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="image" optional="YES" attributeType="Binary" allowsExternalBinaryDataStorage="YES" syncable="YES"/>
         <attribute name="imageURL" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="lastName" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="presenterID" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
@@ -40,7 +41,7 @@
     <elements>
         <element name="Conference" positionX="-63" positionY="-18" width="128" height="165"/>
         <element name="Lecture" positionX="-18" positionY="72" width="128" height="210"/>
-        <element name="Presenter" positionX="-54" positionY="36" width="128" height="150"/>
+        <element name="Presenter" positionX="-54" positionY="36" width="128" height="165"/>
         <element name="Room" positionX="-36" positionY="63" width="128" height="90"/>
     </elements>
 </model>

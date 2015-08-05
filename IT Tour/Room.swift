@@ -11,8 +11,8 @@ import CoreData
 
 class Room: NSManagedObject {
 
-    @NSManaged var roomID: NSNumber
-    @NSManaged var roomName: String
-    @NSManaged var lectures: NSSet
+    @NSManaged var roomID: NSNumber?
+    @NSManaged var roomName: String?
+    @NSManaged var lectures: NSSet?
 
 }

@@ -91,7 +91,7 @@ class FavoritesTableViewController: BaseTableViewController {
         
         if count(searchString) > 0 {
             array = array.filter { (lecture) -> Bool in
-                let topicRange = lecture.lectureName.rangeOfString(searchString, options: NSStringCompareOptions.CaseInsensitiveSearch, range: nil, locale: nil)
+                let topicRange = lecture.lectureName?.rangeOfString(searchString, options: NSStringCompareOptions.CaseInsensitiveSearch, range: nil, locale: nil)
                 
                 return topicRange != nil
             }

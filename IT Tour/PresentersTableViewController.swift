@@ -110,8 +110,8 @@ class PresentersTableViewController: BaseTableViewController {
         
         if count(searchString) > 0 {
             array = array.filter { (presenter) -> Bool in
-                let firstNameRange = presenter.firstName.rangeOfString(searchString, options: NSStringCompareOptions.CaseInsensitiveSearch, range: nil, locale: nil)
-                let lastNameRange = presenter.lastName.rangeOfString(searchString, options: NSStringCompareOptions.CaseInsensitiveSearch, range: nil, locale: nil)
+                let firstNameRange = presenter.firstName?.rangeOfString(searchString, options: NSStringCompareOptions.CaseInsensitiveSearch, range: nil, locale: nil)
+                let lastNameRange = presenter.lastName?.rangeOfString(searchString, options: NSStringCompareOptions.CaseInsensitiveSearch, range: nil, locale: nil)
                 
                 return (firstNameRange != nil || lastNameRange != nil)
             }
