@@ -4,6 +4,16 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>CoreDataFramework.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>4</integer>
+		</dict>
+		<key>IT Tour WatchKit App.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>3</integer>
+		</dict>
 		<key>IT Tour.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
@@ -18,6 +28,21 @@
 			<true/>
 		</dict>
 		<key>494EA3101B6D86DB00CFECAD</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>49E88B201B732D8500136365</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>49E88B3C1B73369400136365</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>49E88B461B73369400136365</key>
 		<dict>
 			<key>primary</key>
 			<true/>

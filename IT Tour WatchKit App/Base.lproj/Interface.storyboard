@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="AgC-eL-Hgc">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="7701"/>
+    </dependencies>
+    <scenes>
+        <!--Interface Controller-->
+        <scene sceneID="aou-V4-d1y">
+            <objects>
+                <controller id="AgC-eL-Hgc" customClass="InterfaceController" customModule="IT_Tour_WatchKit_App" customModuleProvider="target">
+                    <items>
+                        <table alignment="left" id="S2o-sK-u0N">
+                            <items>
+                                <tableRow id="4kZ-V6-Zwt">
+                                    <group key="rootItem" width="1" height="44.5" alignment="left" layout="vertical" spacing="1" id="jBu-ZY-MLF">
+                                        <items>
+                                            <label alignment="left" text="Label" id="Kge-Xz-a3E">
+                                                <fontDescription key="font" style="UICTFontTextStyleHeadline"/>
+                                            </label>
+                                            <label alignment="left" verticalAlignment="bottom" text="Label" id="Y6f-IM-LEu">
+                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="calibratedRGB"/>
+                                                <fontDescription key="font" style="UICTFontTextStyleSubhead"/>
+                                            </label>
+                                        </items>
+                                        <edgeInsets key="margins" left="6" right="0.0" top="4" bottom="4"/>
+                                        <connections>
+                                            <segue destination="g9Y-mu-f3y" kind="push" id="z5b-Ps-eLm"/>
+                                        </connections>
+                                    </group>
+                                </tableRow>
+                            </items>
+                        </table>
+                    </items>
+                </controller>
+            </objects>
+        </scene>
+        <!--Interface Controller-->
+        <scene sceneID="nHd-Bg-fxw">
+            <objects>
+                <controller id="g9Y-mu-f3y"/>
+            </objects>
+            <point key="canvasLocation" x="757" y="477"/>
+        </scene>
+    </scenes>
+</document>

@@ -14,6 +14,20 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
+               BlueprintIdentifier = "49E88B201B732D8500136365"
+               BuildableName = "IT Tour WatchKit App.app"
+               BlueprintName = "IT Tour WatchKit App"
+               ReferencedContainer = "container:IT Tour.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "YES"
+            buildForArchiving = "YES"
+            buildForAnalyzing = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
                BlueprintIdentifier = "494EA2F81B6D86DA00CFECAD"
                BuildableName = "IT Tour.app"
                BlueprintName = "IT Tour"
@@ -23,14 +37,14 @@
          <BuildActionEntry
             buildForTesting = "YES"
             buildForRunning = "YES"
-            buildForProfiling = "NO"
-            buildForArchiving = "NO"
+            buildForProfiling = "YES"
+            buildForArchiving = "YES"
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "494EA3101B6D86DB00CFECAD"
-               BuildableName = "IT TourTests.xctest"
-               BlueprintName = "IT TourTests"
+               BlueprintIdentifier = "49E88B161B732D8500136365"
+               BuildableName = "IT Tour WatchKit Extension.appex"
+               BlueprintName = "IT Tour WatchKit Extension"
                ReferencedContainer = "container:IT Tour.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -60,16 +74,6 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "494EA3101B6D86DB00CFECAD"
-               BuildableName = "IT TourTests.xctest"
-               BlueprintName = "IT TourTests"
-               ReferencedContainer = "container:IT Tour.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
                BlueprintIdentifier = "49E88B461B73369400136365"
                BuildableName = "CoreDataFrameworkTests.xctest"
                BlueprintName = "CoreDataFrameworkTests"
@@ -80,9 +84,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "494EA2F81B6D86DA00CFECAD"
-            BuildableName = "IT Tour.app"
-            BlueprintName = "IT Tour"
+            BlueprintIdentifier = "49E88B201B732D8500136365"
+            BuildableName = "IT Tour WatchKit App.app"
+            BlueprintName = "IT Tour WatchKit App"
             ReferencedContainer = "container:IT Tour.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -96,16 +100,27 @@
       ignoresPersistentStateOnLaunch = "NO"
       debugDocumentVersioning = "YES"
       allowLocationSimulation = "YES">
-      <BuildableProductRunnable
-         runnableDebuggingMode = "0">
+      <RemoteRunnable
+         runnableDebuggingMode = "2"
+         BundleIdentifier = "com.apple.springboard"
+         RemotePath = "/IT Tour">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "494EA2F81B6D86DA00CFECAD"
-            BuildableName = "IT Tour.app"
-            BlueprintName = "IT Tour"
+            BlueprintIdentifier = "49E88B201B732D8500136365"
+            BuildableName = "IT Tour WatchKit App.app"
+            BlueprintName = "IT Tour WatchKit App"
             ReferencedContainer = "container:IT Tour.xcodeproj">
          </BuildableReference>
-      </BuildableProductRunnable>
+      </RemoteRunnable>
+      <MacroExpansion>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "49E88B201B732D8500136365"
+            BuildableName = "IT Tour WatchKit App.app"
+            BlueprintName = "IT Tour WatchKit App"
+            ReferencedContainer = "container:IT Tour.xcodeproj">
+         </BuildableReference>
+      </MacroExpansion>
       <AdditionalOptions>
       </AdditionalOptions>
    </LaunchAction>
@@ -115,16 +130,27 @@
       useCustomWorkingDirectory = "NO"
       buildConfiguration = "Release"
       debugDocumentVersioning = "YES">
-      <BuildableProductRunnable
-         runnableDebuggingMode = "0">
+      <RemoteRunnable
+         runnableDebuggingMode = "2"
+         BundleIdentifier = "com.apple.springboard"
+         RemotePath = "/IT Tour">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "494EA2F81B6D86DA00CFECAD"
-            BuildableName = "IT Tour.app"
-            BlueprintName = "IT Tour"
+            BlueprintIdentifier = "49E88B201B732D8500136365"
+            BuildableName = "IT Tour WatchKit App.app"
+            BlueprintName = "IT Tour WatchKit App"
             ReferencedContainer = "container:IT Tour.xcodeproj">
          </BuildableReference>
-      </BuildableProductRunnable>
+      </RemoteRunnable>
+      <MacroExpansion>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "49E88B201B732D8500136365"
+            BuildableName = "IT Tour WatchKit App.app"
+            BlueprintName = "IT Tour WatchKit App"
+            ReferencedContainer = "container:IT Tour.xcodeproj">
+         </BuildableReference>
+      </MacroExpansion>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">
