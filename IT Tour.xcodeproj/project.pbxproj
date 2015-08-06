@@ -24,12 +24,14 @@
 		494EA3391B6EAE2C00CFECAD /* ConferenceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494EA3381B6EAE2C00CFECAD /* ConferenceCell.swift */; };
 		498D66821B72D49E00A3972D /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 498D66841B72D49E00A3972D /* Localizable.strings */; };
 		498D66881B72EB8000A3972D /* LectureOptionsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 498D66871B72EB8000A3972D /* LectureOptionsCell.swift */; };
+		498DFF171B73F94F009954DC /* CoreDataFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49E88B3D1B73369400136365 /* CoreDataFramework.framework */; };
 		49B88DF31B73733000E9D591 /* MainListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49B88DF21B73733000E9D591 /* MainListController.swift */; };
 		49B88DF51B7375CA00E9D591 /* LectureRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49B88DF41B7375CA00E9D591 /* LectureRow.swift */; };
 		49B88DF71B73768D00E9D591 /* LectureDetailsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49B88DF61B73768D00E9D591 /* LectureDetailsController.swift */; };
 		49B88DF91B73829C00E9D591 /* LectureDetailsHeaderRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49B88DF81B73829C00E9D591 /* LectureDetailsHeaderRow.swift */; };
 		49B88DFB1B73884A00E9D591 /* LectureDetailsPresenterRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49B88DFA1B73884A00E9D591 /* LectureDetailsPresenterRow.swift */; };
 		49B88DFD1B73931300E9D591 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49B88DFC1B73931300E9D591 /* UIKit.framework */; };
+		49B88E001B73B05F00E9D591 /* CoreDataFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49E88B3D1B73369400136365 /* CoreDataFramework.framework */; };
 		49BC5A391B71D6F700ED27CC /* LectureDetailsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49BC5A381B71D6F700ED27CC /* LectureDetailsTableViewController.swift */; };
 		49BC5A3C1B723A8D00ED27CC /* PresenterDetailsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49BC5A3B1B723A8D00ED27CC /* PresenterDetailsTableViewController.swift */; };
 		49BC5A3E1B72545300ED27CC /* LecturePresenterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49BC5A3D1B72545300ED27CC /* LecturePresenterCell.swift */; };
@@ -41,8 +43,6 @@
 		49E88B421B73369400136365 /* CoreDataFramework.h in Headers */ = {isa = PBXBuildFile; fileRef = 49E88B411B73369400136365 /* CoreDataFramework.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		49E88B481B73369400136365 /* CoreDataFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49E88B3D1B73369400136365 /* CoreDataFramework.framework */; };
 		49E88B511B73369400136365 /* CoreDataFrameworkTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49E88B501B73369400136365 /* CoreDataFrameworkTests.swift */; };
-		49E88B541B73369400136365 /* CoreDataFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49E88B3D1B73369400136365 /* CoreDataFramework.framework */; };
-		49E88B551B73369400136365 /* CoreDataFramework.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 49E88B3D1B73369400136365 /* CoreDataFramework.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		49E88B5D1B73371200136365 /* MainManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49D307EB1B700492005E208C /* MainManager.swift */; };
 		49E88B5E1B73372600136365 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494EA3221B6DF8B200CFECAD /* CoreDataManager.swift */; };
 		49E88B5F1B73372B00136365 /* ConferenceExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49BC5A401B726E8200ED27CC /* ConferenceExtension.swift */; };
@@ -93,13 +93,6 @@
 			remoteGlobalIDString = 494EA2F81B6D86DA00CFECAD;
 			remoteInfo = "IT Tour";
 		};
-		49E88B521B73369400136365 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 494EA2F11B6D86DA00CFECAD /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 49E88B3C1B73369400136365;
-			remoteInfo = CoreDataFramework;
-		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -112,17 +105,6 @@
 				49E88B2F1B732D8600136365 /* IT Tour WatchKit Extension.appex in Embed App Extensions */,
 			);
 			name = "Embed App Extensions";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		49E88B591B73369500136365 /* Embed Frameworks */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-				49E88B551B73369400136365 /* CoreDataFramework.framework in Embed Frameworks */,
-			);
-			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
@@ -204,7 +186,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				49E88B541B73369400136365 /* CoreDataFramework.framework in Frameworks */,
+				498DFF171B73F94F009954DC /* CoreDataFramework.framework in Frameworks */,
 				703E8D30D9604A5BFD383C2C /* Pods_IT_Tour.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -220,6 +202,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				49B88E001B73B05F00E9D591 /* CoreDataFramework.framework in Frameworks */,
 				2E85F473A8D955FE49175A94 /* Pods_IT_Tour.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -532,13 +515,12 @@
 				DD935644FF46A5318D2CF388 /* Embed Pods Frameworks */,
 				7BABC40EAC85C0B7BF37B849 /* Copy Pods Resources */,
 				49E88B361B732D8600136365 /* Embed App Extensions */,
-				49E88B591B73369500136365 /* Embed Frameworks */,
+				49B88DFF1B73A66600E9D591 /* ShellScript */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 				49E88B2E1B732D8600136365 /* PBXTargetDependency */,
-				49E88B531B73369400136365 /* PBXTargetDependency */,
 			);
 			name = "IT Tour";
 			productName = "IT Tour";
@@ -792,6 +774,19 @@
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
+		49B88DFF1B73A66600E9D591 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Fabric/Fabric.framework/run\" 93e9f8e607e5e400856816542494af5a09685333 5886b95fa696fe7b6f5609ba5b732eee6e9bb73bd82d01c3d1b8bbb18f06db98";
+		};
 		796664FA2044935D12F70C7A /* Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -979,11 +974,6 @@
 			target = 494EA2F81B6D86DA00CFECAD /* IT Tour */;
 			targetProxy = 49E88B4B1B73369400136365 /* PBXContainerItemProxy */;
 		};
-		49E88B531B73369400136365 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 49E88B3C1B73369400136365 /* CoreDataFramework */;
-			targetProxy = 49E88B521B73369400136365 /* PBXContainerItemProxy */;
-		};
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
@@ -1120,7 +1110,7 @@
 				INFOPLIST_FILE = "IT Tour/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "0d566548-009e-4e43-8fce-d5ff150a8a43";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -1134,7 +1124,7 @@
 				INFOPLIST_FILE = "IT Tour/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "0d566548-009e-4e43-8fce-d5ff150a8a43";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};
@@ -1178,8 +1168,9 @@
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = "IT Tour WatchKit Extension/IT Tour WatchKit Extension.entitlements";
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Vladimir Savov (74C3PZX295)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Vladimir Savov (74C3PZX295)";
+				DEFINES_MODULE = YES;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
@@ -1201,8 +1192,9 @@
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = "IT Tour WatchKit Extension/IT Tour WatchKit Extension.entitlements";
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Vladimir Savov (74C3PZX295)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Vladimir Savov (74C3PZX295)";
+				DEFINES_MODULE = YES;
 				INFOPLIST_FILE = "IT Tour WatchKit Extension/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
@@ -1217,7 +1209,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Vladimir Savov (74C3PZX295)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Vladimir Savov (74C3PZX295)";
+				DEFINES_MODULE = YES;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
@@ -1226,6 +1220,7 @@
 				INFOPLIST_FILE = "IT Tour WatchKit App/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = 4;
 				"TARGETED_DEVICE_FAMILY[sdk=iphonesimulator*]" = "1,4";
@@ -1236,11 +1231,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Vladimir Savov (74C3PZX295)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Vladimir Savov (74C3PZX295)";
+				DEFINES_MODULE = YES;
 				IBSC_MODULE = IT_Tour_WatchKit_Extension;
 				INFOPLIST_FILE = "IT Tour WatchKit App/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = 4;
 				"TARGETED_DEVICE_FAMILY[sdk=iphonesimulator*]" = "1,4";
@@ -1253,11 +1251,13 @@
 			buildSettings = {
 				APPLICATION_EXTENSION_API_ONLY = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer: Vladimir Savov (74C3PZX295)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Vladimir Savov (74C3PZX295)";
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = NO;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
@@ -1268,6 +1268,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
@@ -1281,17 +1282,20 @@
 			buildSettings = {
 				APPLICATION_EXTENSION_API_ONLY = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer: Vladimir Savov (74C3PZX295)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Vladimir Savov (74C3PZX295)";
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = NO;
 				INFOPLIST_FILE = CoreDataFramework/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				ONLY_ACTIVE_ARCH = YES;
+				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";

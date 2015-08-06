@@ -72,16 +72,28 @@ class BaseTableViewController: UITableViewController, NSFetchedResultsController
         self.tableView.reloadData()
         
         self.fetchedResultsController.delegate = self
+
+        UIView.performWithoutAnimation { () -> Void in
+            if let visibleIndexPaths = self.tableView.indexPathsForVisibleRows() as? [NSIndexPath] {
+                self.tableView.reloadRowsAtIndexPaths(visibleIndexPaths, withRowAnimation: UITableViewRowAnimation.None)
+            }
+        }
     }
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
+        
+        
     }
     
     override func viewDidDisappear(animated: Bool) {
         super.viewDidDisappear(animated)
         
         self.fetchedResultsController.delegate = nil
+    }
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
     }
     
     // MARK: - NSFetchedResultsControllerDelegate methods

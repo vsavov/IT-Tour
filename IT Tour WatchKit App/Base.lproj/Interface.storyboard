@@ -45,10 +45,10 @@
             </objects>
             <point key="canvasLocation" x="549" y="337"/>
         </scene>
-        <!--Lecture-->
+        <!--LectureDetailsController-->
         <scene sceneID="z3N-7l-edT">
             <objects>
-                <controller identifier="LectureDetailsController" title="Lecture" id="OdF-dd-7S3" customClass="LectureDetailsController" customModule="IT_Tour_WatchKit_Extension">
+                <controller identifier="LectureDetailsController" id="OdF-dd-7S3" customClass="LectureDetailsController" customModule="IT_Tour_WatchKit_Extension">
                     <items>
                         <table alignment="left" id="709-yd-okN">
                             <items>
