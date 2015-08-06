@@ -65,8 +65,8 @@ class BaseTableViewController: UITableViewController, NSFetchedResultsController
         
         var error : NSError?
         
-        if self.fetchedResultsController.performFetch(&error) == false {
-            NSLog("Failed to load current book with error \(error)")
+        if !self.fetchedResultsController.performFetch(&error) {
+            NSLog("Failed to load data with error \(error)")
         }
         
         self.tableView.reloadData()

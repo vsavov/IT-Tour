@@ -189,6 +189,23 @@ public class CoreDataManager {
         return result?.first as! Room?
     }
     
+    public func getFavoriteLectures() -> [Lecture] {
+        var fetchRequest = NSFetchRequest(entityName: "Lecture")
+        fetchRequest.predicate = NSPredicate(format: "isFavorite == %@", true)
+        fetchRequest.sortDescriptors = [NSSortDescriptor(key: "lectureName", ascending: true)]
+        
+        var error: NSError?
+        var result = self.managedObjectContext.executeFetchRequest(fetchRequest, error: &error)
+        
+        if let unwrappedError = error {
+            NSLog("Error fetching default conference: %@", unwrappedError)
+            
+            return []
+        }
+        
+        return result as! [Lecture]
+    }
+    
     public func changeFavoriteStatusOf(lectureID: String) -> Lecture? {
         var lecture = self.lectureWithID(lectureID)
         

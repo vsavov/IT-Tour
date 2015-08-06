@@ -24,10 +24,15 @@
 		494EA3391B6EAE2C00CFECAD /* ConferenceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494EA3381B6EAE2C00CFECAD /* ConferenceCell.swift */; };
 		498D66821B72D49E00A3972D /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 498D66841B72D49E00A3972D /* Localizable.strings */; };
 		498D66881B72EB8000A3972D /* LectureOptionsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 498D66871B72EB8000A3972D /* LectureOptionsCell.swift */; };
+		49B88DF31B73733000E9D591 /* MainListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49B88DF21B73733000E9D591 /* MainListController.swift */; };
+		49B88DF51B7375CA00E9D591 /* LectureRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49B88DF41B7375CA00E9D591 /* LectureRow.swift */; };
+		49B88DF71B73768D00E9D591 /* LectureDetailsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49B88DF61B73768D00E9D591 /* LectureDetailsController.swift */; };
+		49B88DF91B73829C00E9D591 /* LectureDetailsHeaderRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49B88DF81B73829C00E9D591 /* LectureDetailsHeaderRow.swift */; };
+		49B88DFB1B73884A00E9D591 /* LectureDetailsPresenterRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49B88DFA1B73884A00E9D591 /* LectureDetailsPresenterRow.swift */; };
+		49B88DFD1B73931300E9D591 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49B88DFC1B73931300E9D591 /* UIKit.framework */; };
 		49BC5A391B71D6F700ED27CC /* LectureDetailsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49BC5A381B71D6F700ED27CC /* LectureDetailsTableViewController.swift */; };
 		49BC5A3C1B723A8D00ED27CC /* PresenterDetailsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49BC5A3B1B723A8D00ED27CC /* PresenterDetailsTableViewController.swift */; };
 		49BC5A3E1B72545300ED27CC /* LecturePresenterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49BC5A3D1B72545300ED27CC /* LecturePresenterCell.swift */; };
-		49E88B1C1B732D8500136365 /* InterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49E88B1B1B732D8500136365 /* InterfaceController.swift */; };
 		49E88B1E1B732D8500136365 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 49E88B1D1B732D8500136365 /* Images.xcassets */; };
 		49E88B221B732D8500136365 /* IT Tour WatchKit App.app in Resources */ = {isa = PBXBuildFile; fileRef = 49E88B211B732D8500136365 /* IT Tour WatchKit App.app */; };
 		49E88B2A1B732D8500136365 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49E88B281B732D8500136365 /* Interface.storyboard */; };
@@ -157,6 +162,13 @@
 		498D66851B72D4A000A3972D /* bg */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = bg; path = bg.lproj/Localizable.strings; sourceTree = "<group>"; };
 		498D66871B72EB8000A3972D /* LectureOptionsCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LectureOptionsCell.swift; sourceTree = "<group>"; };
 		498D66891B72F09600A3972D /* Conference.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Conference.swift; sourceTree = "<group>"; };
+		49B88DF11B73733000E9D591 /* IT Tour WatchKit Extension-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "IT Tour WatchKit Extension-Bridging-Header.h"; sourceTree = "<group>"; };
+		49B88DF21B73733000E9D591 /* MainListController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainListController.swift; sourceTree = "<group>"; };
+		49B88DF41B7375CA00E9D591 /* LectureRow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LectureRow.swift; sourceTree = "<group>"; };
+		49B88DF61B73768D00E9D591 /* LectureDetailsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LectureDetailsController.swift; sourceTree = "<group>"; };
+		49B88DF81B73829C00E9D591 /* LectureDetailsHeaderRow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LectureDetailsHeaderRow.swift; sourceTree = "<group>"; };
+		49B88DFA1B73884A00E9D591 /* LectureDetailsPresenterRow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LectureDetailsPresenterRow.swift; sourceTree = "<group>"; };
+		49B88DFC1B73931300E9D591 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		49BC5A381B71D6F700ED27CC /* LectureDetailsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LectureDetailsTableViewController.swift; sourceTree = "<group>"; };
 		49BC5A3B1B723A8D00ED27CC /* PresenterDetailsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PresenterDetailsTableViewController.swift; sourceTree = "<group>"; };
 		49BC5A3D1B72545300ED27CC /* LecturePresenterCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LecturePresenterCell.swift; sourceTree = "<group>"; };
@@ -167,7 +179,6 @@
 		49D307EB1B700492005E208C /* MainManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MainManager.swift; path = "../IT Tour/MainManager.swift"; sourceTree = "<group>"; };
 		49E88B171B732D8500136365 /* IT Tour WatchKit Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "IT Tour WatchKit Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
 		49E88B1A1B732D8500136365 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		49E88B1B1B732D8500136365 /* InterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterfaceController.swift; sourceTree = "<group>"; };
 		49E88B1D1B732D8500136365 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		49E88B211B732D8500136365 /* IT Tour WatchKit App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "IT Tour WatchKit App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		49E88B271B732D8500136365 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -217,6 +228,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				49B88DFD1B73931300E9D591 /* UIKit.framework in Frameworks */,
 				8A8721D42A98510356E33A74 /* Pods_CoreDataFramework.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -396,9 +408,12 @@
 		49E88B181B732D8500136365 /* IT Tour WatchKit Extension */ = {
 			isa = PBXGroup;
 			children = (
-				49E88B371B73357400136365 /* IT Tour WatchKit Extension.entitlements */,
-				49E88B1B1B732D8500136365 /* InterfaceController.swift */,
 				49E88B1D1B732D8500136365 /* Images.xcassets */,
+				49B88DF61B73768D00E9D591 /* LectureDetailsController.swift */,
+				49B88DF81B73829C00E9D591 /* LectureDetailsHeaderRow.swift */,
+				49B88DFA1B73884A00E9D591 /* LectureDetailsPresenterRow.swift */,
+				49B88DF41B7375CA00E9D591 /* LectureRow.swift */,
+				49B88DF21B73733000E9D591 /* MainListController.swift */,
 				49E88B191B732D8500136365 /* Supporting Files */,
 			);
 			path = "IT Tour WatchKit Extension";
@@ -408,6 +423,8 @@
 			isa = PBXGroup;
 			children = (
 				49E88B1A1B732D8500136365 /* Info.plist */,
+				49B88DF11B73733000E9D591 /* IT Tour WatchKit Extension-Bridging-Header.h */,
+				49E88B371B73357400136365 /* IT Tour WatchKit Extension.entitlements */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -469,6 +486,7 @@
 		8FF753CB75A40720209A1DFF /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				49B88DFC1B73931300E9D591 /* UIKit.framework */,
 				5B744B86F6D579E43B4D9954 /* Pods.framework */,
 				008F89EFED3ED14A24C18183 /* Pods_CoreDataFramework.framework */,
 				AAC4BD9401981AFD28120EFF /* Pods_IT_Tour.framework */,
@@ -900,7 +918,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				49E88B1C1B732D8500136365 /* InterfaceController.swift in Sources */,
+				49B88DF31B73733000E9D591 /* MainListController.swift in Sources */,
+				49B88DFB1B73884A00E9D591 /* LectureDetailsPresenterRow.swift in Sources */,
+				49B88DF51B7375CA00E9D591 /* LectureRow.swift in Sources */,
+				49B88DF71B73768D00E9D591 /* LectureDetailsController.swift in Sources */,
+				49B88DF91B73829C00E9D591 /* LectureDetailsHeaderRow.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1154,6 +1176,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = B6B4B1E309EDCDD3A691B946 /* Pods-IT Tour.debug.xcconfig */;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = "IT Tour WatchKit Extension/IT Tour WatchKit Extension.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -1167,6 +1190,8 @@
 				PRODUCT_NAME = "${TARGET_NAME}";
 				PROVISIONING_PROFILE = "";
 				SKIP_INSTALL = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "IT Tour WatchKit Extension/IT Tour WatchKit Extension-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -1174,6 +1199,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 13068C1374FA56FE3316E55D /* Pods-IT Tour.release.xcconfig */;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = "IT Tour WatchKit Extension/IT Tour WatchKit Extension.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -1183,6 +1209,7 @@
 				PRODUCT_NAME = "${TARGET_NAME}";
 				PROVISIONING_PROFILE = "";
 				SKIP_INSTALL = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "IT Tour WatchKit Extension/IT Tour WatchKit Extension-Bridging-Header.h";
 			};
 			name = Release;
 		};
@@ -1239,6 +1266,7 @@
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1262,6 +1290,7 @@
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";

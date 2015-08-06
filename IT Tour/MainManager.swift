@@ -71,6 +71,10 @@ public class MainManager {
         operation.start()
     }
     
+    public func getFavoriteLectures() -> [Lecture] {
+        return CoreDataManager.sharedInstance.getFavoriteLectures()
+    }
+    
     func parseJSON(json: JSONDictionary) {
         ////////////////////////
         // Order DOES matter! //
