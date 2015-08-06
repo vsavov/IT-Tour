@@ -65,7 +65,7 @@ class LectureCell: UITableViewCell {
                     presenterString += ", "
                 }
                 
-                presenterString += "\(castedPresenter.firstName) \(castedPresenter.lastName)"
+                presenterString += "\(castedPresenter.firstName!) \(castedPresenter.lastName!)"
             }
         }
         

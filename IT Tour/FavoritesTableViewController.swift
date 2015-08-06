@@ -16,7 +16,9 @@ class FavoritesTableViewController: BaseTableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.tableView.estimatedRowHeight = 79
+        self.tableView.estimatedRowHeight = 82
+        
+        self.title = NSLocalizedString("Favorites", comment: "Title for favorites screen")
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
@@ -72,7 +74,7 @@ class FavoritesTableViewController: BaseTableViewController {
     override func createFetchedResultsController() -> NSFetchedResultsController {
         var fetchRequest = NSFetchRequest(entityName: "Lecture")
         fetchRequest.predicate = NSPredicate(format: "isFavorite == %@", true)
-        fetchRequest.sortDescriptors = [NSSortDescriptor(key: "startTime", ascending: true)]
+        fetchRequest.sortDescriptors = [NSSortDescriptor(key: "lectureName", ascending: true)]
         fetchRequest.relationshipKeyPathsForPrefetching = ["conference", "room"]
         
         var fetchedResultsController = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: CoreDataManager.sharedInstance.managedObjectContext, sectionNameKeyPath: nil, cacheName: nil)

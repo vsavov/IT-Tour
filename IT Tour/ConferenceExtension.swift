@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 extension Conference {
     
@@ -18,6 +19,20 @@ extension Conference {
             let yearComponent = components.year
             
             return String(yearComponent)
+        }
+        
+        return nil
+    }
+    
+    func setImageData(image: UIImage) {
+        let imageData = UIImageJPEGRepresentation(image, 0.8)
+        
+        self.image = imageData
+    }
+    
+    func getImage() -> UIImage? {
+        if let imageData = self.image {
+            return UIImage(data: imageData)
         }
         
         return nil

@@ -21,6 +21,9 @@ class PresenterCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        
+        self.presenterImageView.layer.cornerRadius = self.presenterImageView.frame.size.width / 2.0
+        self.presenterImageView.clipsToBounds = true
     }
     
     override func prepareForReuse() {
@@ -43,6 +46,6 @@ class PresenterCell: UITableViewCell {
         }
         
         self.presenterImageView.image = presenter.getImage()
-        self.presenterNameLabel.text = "\(presenter.firstName) \(presenter.lastName)"
+        self.presenterNameLabel.text = "\(presenter.firstName!) \(presenter.lastName!)"
     }
 }

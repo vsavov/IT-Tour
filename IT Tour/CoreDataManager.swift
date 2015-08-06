@@ -109,9 +109,41 @@ class CoreDataManager {
         return result?.first as! Conference?
     }
     
+    func conferenceForImageURL(imageURL: String) -> Conference? {
+        var fetchRequest = NSFetchRequest(entityName: "Conference")
+        fetchRequest.predicate = NSPredicate(format: "logoURL == %@", imageURL)
+        
+        var error: NSError?
+        var result = self.managedObjectContext.executeFetchRequest(fetchRequest, error: &error)
+        
+        if let unwrappedError = error {
+            NSLog("Error fetching conference: %@", unwrappedError)
+            
+            return nil
+        }
+        
+        return result?.first as! Conference?
+    }
+    
     func presenterWithID(presenterID: Int) -> Presenter? {
         var fetchRequest = NSFetchRequest(entityName: "Presenter")
         fetchRequest.predicate = NSPredicate(format: "presenterID == %d", presenterID)
+        
+        var error: NSError?
+        var result = self.managedObjectContext.executeFetchRequest(fetchRequest, error: &error)
+        
+        if let unwrappedError = error {
+            NSLog("Error fetching presenter: %@", unwrappedError)
+            
+            return nil
+        }
+        
+        return result?.first as! Presenter?
+    }
+    
+    func presenterForImageURL(imageURL: String) -> Presenter? {
+        var fetchRequest = NSFetchRequest(entityName: "Presenter")
+        fetchRequest.predicate = NSPredicate(format: "imageURL == %@", imageURL)
         
         var error: NSError?
         var result = self.managedObjectContext.executeFetchRequest(fetchRequest, error: &error)

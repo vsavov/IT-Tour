@@ -17,6 +17,8 @@ class PresentersTableViewController: BaseTableViewController {
         super.viewDidLoad()
         
         self.tableView.estimatedRowHeight = 57
+        
+        self.title = NSLocalizedString("Presenters", comment: "Title for presenters screen")
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
@@ -56,6 +58,37 @@ class PresentersTableViewController: BaseTableViewController {
         let presenter = self.fetchedResultsController.objectAtIndexPath(indexPath) as! Presenter
         
         return presenter.firstLetter
+    }
+    
+    override func sectionIndexTitlesForTableView(tableView: UITableView) -> [AnyObject]! {
+        if self.searchController!.active {
+            return nil
+        }
+        
+        var sectionIndexTitles = [UITableViewIndexSearch]
+        
+        let sections = self.fetchedResultsController.sections as! [NSFetchedResultsSectionInfo]
+        
+        for sectionInfo in sections {
+            sectionIndexTitles.append(sectionInfo.name!)
+        }
+        
+        return sectionIndexTitles
+    }
+    
+    override func tableView(tableView: UITableView, sectionForSectionIndexTitle title: String, atIndex index: Int) -> Int {
+        if self.searchController!.active {
+            return NSNotFound
+        }
+        
+        if index > 0 {
+            return index - 1
+        }
+        
+        let searchBarFrame = self.searchController!.searchBar.frame
+        self.tableView.scrollRectToVisible(searchBarFrame, animated: false)
+        
+        return NSNotFound
     }
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

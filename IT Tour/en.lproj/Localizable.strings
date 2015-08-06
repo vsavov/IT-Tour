@@ -1,0 +1,39 @@
+/* Localizable.strings
+  IT Tour
+
+  Created by Vladimir Savov on 6.08.15.
+  Copyright (c) 2015 г. IT Tour. All rights reserved. */
+
+/* Option in Lecture detail screen */
+"Add to Favorites" = "Add to Favorites";
+
+/* Title for lectures section in presenter's details screen */
+"Lectures" = "Lectures";
+
+/* Option in Lecture detail screen */
+"Presentation" = "Presentation";
+
+/* Option in Lecture detail screen */
+"Remove from Favorites" = "Remove from Favorites";
+
+/* Search bar placeholder text */
+"Search" = "Search";
+
+/* Option in Lecture detail screen */
+"Video" = "Video";
+
+/* Title for lecture details screen */
+"Lecture" = "Lecture";
+
+/* Title for presenter details screen */
+"Presenter" = "Presenter";
+
+/* Title for conferences screen */
+"Conferences" = "Conferences";
+
+/* Title for favorites screen */
+"Favorites" = "Favorites";
+
+/* Title for presenters screen */
+"Presenters" = "Presenters";
+

@@ -44,7 +44,7 @@ class ConferenceCell: UITableViewCell {
             return
         }
         
-        // setup logo image view
+        self.logoImageView.image = conference.getImage()
         self.conferenceNameLabel.text = conference.conferenceName
         self.conferenceTimeLabel.text = self.generateTimeStringFrom(conference)
     }

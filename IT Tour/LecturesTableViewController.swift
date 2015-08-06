@@ -24,7 +24,7 @@ class LecturesTableViewController: BaseTableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.tableView.estimatedRowHeight = 79
+        self.tableView.estimatedRowHeight = 82
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
@@ -102,7 +102,7 @@ class LecturesTableViewController: BaseTableViewController {
         var fetchRequest = NSFetchRequest(entityName: "Lecture")
         fetchRequest.predicate = NSPredicate(format: "conference.conferenceID == %d", self.conferenceID)
         fetchRequest.sortDescriptors = [NSSortDescriptor(key: "startTime", ascending: true), NSSortDescriptor(key: "room.roomName", ascending: true)]
-        fetchRequest.relationshipKeyPathsForPrefetching = ["room"]
+        fetchRequest.relationshipKeyPathsForPrefetching = ["room", "presenters"]
         
         var fetchedResultsController = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: CoreDataManager.sharedInstance.managedObjectContext, sectionNameKeyPath: "startingHour", cacheName: nil)
         
@@ -131,7 +131,7 @@ class LecturesTableViewController: BaseTableViewController {
     
     private func generateSectionHeaderFrom(hours: String?) -> String {
         if let unwrappedHours = hours {
-            return "\(hours):00"
+            return "\(unwrappedHours):00"
         }
         
         return ""

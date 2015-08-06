@@ -34,10 +34,15 @@ class PresenterDetailsTableViewController: UITableViewController {
         
         self.tableView.rowHeight = UITableViewAutomaticDimension
         self.tableView.estimatedRowHeight = 79
+        
+        self.title = NSLocalizedString("Presenter", comment: "Title for presenter details screen")
     }
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
+        
+        self.presenterImageView.layer.cornerRadius = self.presenterImageView.frame.size.width / 2.0
+        self.presenterImageView.clipsToBounds = true
         
         self.updateUI()
     }
@@ -83,6 +88,8 @@ class PresenterDetailsTableViewController: UITableViewController {
     // MARK: - Private methods
     
     private func updateUI() {
+        self.presenterImageView.image = self.presenter?.getImage()
+        
         self.firstNameLabel.text = self.presenter?.firstName
         self.lastNameLabel.text = self.presenter?.lastName
         self.shortBioLabel.text = self.presenter?.shortBio

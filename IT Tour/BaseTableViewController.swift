@@ -52,6 +52,8 @@ class BaseTableViewController: UITableViewController, NSFetchedResultsController
         self.searchController!.searchResultsUpdater = self
         self.searchController!.dimsBackgroundDuringPresentation = false
         self.searchController!.searchBar.placeholder = NSLocalizedString("Search", comment: "Search bar placeholder text")
+        self.searchController!.searchBar
+        
         
         self.tableView.tableHeaderView = self.searchController!.searchBar
         

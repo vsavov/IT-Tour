@@ -21,6 +21,8 @@ class ConferencesTableViewController: BaseTableViewController {
         super.viewDidLoad()
         
         self.tableView.estimatedRowHeight = 80
+        
+        self.title = NSLocalizedString("Conferences", comment: "Title for conferences screen")
     }
     
     override func viewWillAppear(animated: Bool) {

@@ -40,6 +40,8 @@ class LectureDetailsTableViewController: UITableViewController {
         
         self.tableView.rowHeight = UITableViewAutomaticDimension
         self.tableView.estimatedRowHeight = 44
+        
+        self.title = NSLocalizedString("Lecture", comment: "Title for lecture details screen")
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -109,11 +111,19 @@ class LectureDetailsTableViewController: UITableViewController {
     // MARK: - UITableViewDelegate methods
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        if indexPath.section == 1 && indexPath.row == 0 {
-            self.changeFavoriteStatus()
+        if indexPath.section != 1 {
+            return
         }
         
-        // TODO: handle the other cases
+        tableView.deselectRowAtIndexPath(indexPath, animated: true)
+        
+        if indexPath.row == 0 {
+            self.changeFavoriteStatus()
+        } else if indexPath.row == 1 && self.lecture!.videoURL != nil {
+            self.openVideoLink()
+        } else {
+            self.openPresentationLink()
+        }
     }
     
     // MARK: - Private methods
@@ -131,10 +141,12 @@ class LectureDetailsTableViewController: UITableViewController {
     }
     
     private func prepareCellForOptionsAt(indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("optionsCell", forIndexPath: indexPath) as! UITableViewCell
+        let cell = tableView.dequeueReusableCellWithIdentifier("optionsCell", forIndexPath: indexPath) as! LectureOptionsCell
         
         if indexPath.row == 0 {
             var localizedString: String
+            
+            cell.shouldShowSeparator = false
             
             if self.lecture!.isFavorite.boolValue {
                 localizedString = NSLocalizedString("Remove from Favorites", comment: "Option in Lecture detail screen")
@@ -218,5 +230,17 @@ class LectureDetailsTableViewController: UITableViewController {
         self.tableView.reloadRowsAtIndexPaths([NSIndexPath(forRow: 0, inSection: 1)], withRowAnimation: UITableViewRowAnimation.Automatic)
         
         self.tableView.endUpdates()
+    }
+    
+    private func openVideoLink() {
+        let url = NSURL(string: self.lecture!.videoURL!)!
+        
+        UIApplication.sharedApplication().openURL(url)
+    }
+    
+    private func openPresentationLink() {
+        let url = NSURL(string: self.lecture!.presentationURL!)!
+        
+        UIApplication.sharedApplication().openURL(url)
     }
 }

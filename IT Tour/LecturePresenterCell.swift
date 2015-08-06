@@ -21,14 +21,13 @@ class LecturePresenterCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        
-        self.separatorInset = UIEdgeInsetsMake(0.0, CGRectGetWidth(self.bounds)/2.0, 0.0, CGRectGetWidth(self.bounds)/2.0)
+
+        self.presenterImageView.layer.cornerRadius = self.presenterImageView.frame.size.width / 2.0
+        self.presenterImageView.clipsToBounds = true
     }
     
     override func prepareForReuse() {
         super.prepareForReuse()
-        
-        self.separatorInset = UIEdgeInsetsMake(0.0, CGRectGetWidth(self.bounds)/2.0, 0.0, CGRectGetWidth(self.bounds)/2.0)
         
         self.presenterID = -1
         self.presenterImageView.image = nil
@@ -49,6 +48,6 @@ class LecturePresenterCell: UITableViewCell {
         }
         
         self.presenterImageView.image = presenter.getImage()
-        self.presenterNameLabel.text = "\(presenter.firstName) \(presenter.lastName)"
+        self.presenterNameLabel.text = "\(presenter.firstName!) \(presenter.lastName!)"
     }
 }
