@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="7701" systemVersion="14E46" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
-    <entity name="Conference" representedClassName="IT_Tour.Conference" syncable="YES">
+    <entity name="Conference" representedClassName="CoreDataFramework.Conference" syncable="YES">
         <attribute name="conferenceID" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
         <attribute name="conferenceName" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="endDate" optional="YES" attributeType="Date" syncable="YES"/>
@@ -11,7 +11,7 @@
         <attribute name="year" optional="YES" transient="YES" attributeType="String" syncable="YES"/>
         <relationship name="lectures" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Lecture" inverseName="conference" inverseEntity="Lecture" syncable="YES"/>
     </entity>
-    <entity name="Lecture" representedClassName="IT_Tour.Lecture" syncable="YES">
+    <entity name="Lecture" representedClassName="CoreDataFramework.Lecture" syncable="YES">
         <attribute name="endTime" optional="YES" attributeType="Date" syncable="YES"/>
         <attribute name="isFavorite" optional="YES" attributeType="Boolean" defaultValueString="NO" syncable="YES"/>
         <attribute name="lectureID" optional="YES" attributeType="String" syncable="YES"/>
@@ -24,7 +24,7 @@
         <relationship name="presenters" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Presenter" inverseName="lectures" inverseEntity="Presenter" syncable="YES"/>
         <relationship name="room" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Room" inverseName="lectures" inverseEntity="Room" syncable="YES"/>
     </entity>
-    <entity name="Presenter" representedClassName="IT_Tour.Presenter" syncable="YES">
+    <entity name="Presenter" representedClassName="CoreDataFramework.Presenter" syncable="YES">
         <attribute name="firstLetter" optional="YES" transient="YES" attributeType="String" syncable="YES"/>
         <attribute name="firstName" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="image" optional="YES" attributeType="Binary" allowsExternalBinaryDataStorage="YES" syncable="YES"/>
@@ -34,7 +34,7 @@
         <attribute name="shortBio" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="lectures" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Lecture" inverseName="presenters" inverseEntity="Lecture" syncable="YES"/>
     </entity>
-    <entity name="Room" representedClassName="IT_Tour.Room" syncable="YES">
+    <entity name="Room" representedClassName="CoreDataFramework.Room" syncable="YES">
         <attribute name="roomID" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
         <attribute name="roomName" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="lectures" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Lecture" inverseName="room" inverseEntity="Lecture" syncable="YES"/>

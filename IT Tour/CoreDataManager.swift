@@ -9,11 +9,11 @@
 import CoreData
 import Foundation
 
-class CoreDataManager {
+public class CoreDataManager {
     
-    static let sharedInstance = CoreDataManager()
+    public static let sharedInstance = CoreDataManager()
     
-    lazy private(set) var managedObjectContext: NSManagedObjectContext = {
+    lazy public private(set) var managedObjectContext: NSManagedObjectContext = {
         var managedObjectContext = NSManagedObjectContext(concurrencyType: NSManagedObjectContextConcurrencyType.MainQueueConcurrencyType)
         managedObjectContext.parentContext = self.privateContext
         
@@ -28,7 +28,7 @@ class CoreDataManager {
         }()
     
     lazy private var persistanceStoreCoordinator: NSPersistentStoreCoordinator = {
-        let modelURL = NSBundle.mainBundle().URLForResource("IT_Tour", withExtension: "momd")
+        let modelURL = NSBundle(identifier: "bg.it-tour.CoreDataFramework")!.URLForResource("IT_Tour", withExtension: "momd")
         assert(modelURL != nil, "Can't find URL for the CoreData model!")
         
         let mom = NSManagedObjectModel(contentsOfURL: modelURL!)
@@ -59,7 +59,7 @@ class CoreDataManager {
         save()
     }
     
-    func save() {
+    public func save() {
         if !self.privateContext.hasChanges && !self.managedObjectContext.hasChanges {
             return
         }
@@ -77,7 +77,7 @@ class CoreDataManager {
         }
     }
     
-    func defaultConference() -> Conference? {
+    public func defaultConference() -> Conference? {
         var fetchRequest = NSFetchRequest(entityName: "Conference")
         fetchRequest.predicate = NSPredicate(format: "isDefault == %@", true)
         
@@ -93,7 +93,7 @@ class CoreDataManager {
         return result?.first as! Conference?
     }
     
-    func conferenceWithID(conferenceID: Int) -> Conference? {
+    public func conferenceWithID(conferenceID: Int) -> Conference? {
         var fetchRequest = NSFetchRequest(entityName: "Conference")
         fetchRequest.predicate = NSPredicate(format: "conferenceID == %d", conferenceID)
         
@@ -109,7 +109,7 @@ class CoreDataManager {
         return result?.first as! Conference?
     }
     
-    func conferenceForImageURL(imageURL: String) -> Conference? {
+    public func conferenceForImageURL(imageURL: String) -> Conference? {
         var fetchRequest = NSFetchRequest(entityName: "Conference")
         fetchRequest.predicate = NSPredicate(format: "logoURL == %@", imageURL)
         
@@ -125,7 +125,7 @@ class CoreDataManager {
         return result?.first as! Conference?
     }
     
-    func presenterWithID(presenterID: Int) -> Presenter? {
+    public func presenterWithID(presenterID: Int) -> Presenter? {
         var fetchRequest = NSFetchRequest(entityName: "Presenter")
         fetchRequest.predicate = NSPredicate(format: "presenterID == %d", presenterID)
         
@@ -141,7 +141,7 @@ class CoreDataManager {
         return result?.first as! Presenter?
     }
     
-    func presenterForImageURL(imageURL: String) -> Presenter? {
+    public func presenterForImageURL(imageURL: String) -> Presenter? {
         var fetchRequest = NSFetchRequest(entityName: "Presenter")
         fetchRequest.predicate = NSPredicate(format: "imageURL == %@", imageURL)
         
@@ -157,7 +157,7 @@ class CoreDataManager {
         return result?.first as! Presenter?
     }
     
-    func lectureWithID(lectureID: String) -> Lecture? {
+    public func lectureWithID(lectureID: String) -> Lecture? {
         var fetchRequest = NSFetchRequest(entityName: "Lecture")
         fetchRequest.predicate = NSPredicate(format: "lectureID == %@", lectureID)
         
@@ -173,7 +173,7 @@ class CoreDataManager {
         return result?.first as! Lecture?
     }
     
-    func roomWithID(roomID: Int) -> Room? {
+    public func roomWithID(roomID: Int) -> Room? {
         var fetchRequest = NSFetchRequest(entityName: "Room")
         fetchRequest.predicate = NSPredicate(format: "roomID == %d", roomID)
         
@@ -189,7 +189,7 @@ class CoreDataManager {
         return result?.first as! Room?
     }
     
-    func changeFavoriteStatusOf(lectureID: String) -> Lecture? {
+    public func changeFavoriteStatusOf(lectureID: String) -> Lecture? {
         var lecture = self.lectureWithID(lectureID)
         
         if let unwrappedLecture = lecture {

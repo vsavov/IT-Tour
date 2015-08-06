@@ -9,14 +9,14 @@
 import Foundation
 import CoreData
 
-class Presenter: NSManagedObject {
+public class Presenter: NSManagedObject {
 
-    @NSManaged var firstName: String?
-    @NSManaged var imageURL: String?
-    @NSManaged var lastName: String?
-    @NSManaged var presenterID: NSNumber?
-    @NSManaged var shortBio: String?
-    @NSManaged var image: NSData?
-    @NSManaged var lectures: NSSet?
+    @NSManaged public var firstName: String?
+    @NSManaged public var imageURL: String?
+    @NSManaged public var lastName: String?
+    @NSManaged public var presenterID: NSNumber?
+    @NSManaged public var shortBio: String?
+    @NSManaged public var image: NSData?
+    @NSManaged public var lectures: NSSet?
 
 }

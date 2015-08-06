@@ -13,11 +13,11 @@ import CoreData
 typealias JSONDictionary = Dictionary<String, AnyObject>
 typealias JSONArray = Array<JSONDictionary>
 
-class MainManager {
+public class MainManager {
     
-    static let sharedInstance = MainManager()
+    public static let sharedInstance = MainManager()
     
-    static let hourDateFormatter: NSDateFormatter = {
+    public static let hourDateFormatter: NSDateFormatter = {
         let formatter = NSDateFormatter()
         formatter.timeZone = NSTimeZone.systemTimeZone()
         formatter.dateFormat = "HH"
@@ -33,23 +33,23 @@ class MainManager {
         return formatter
         }()
     
-    func defaultConference() -> Conference? {
+    public func defaultConference() -> Conference? {
         return CoreDataManager.sharedInstance.defaultConference()
     }
     
-    func presenterWithID(presenterID: Int) -> Presenter? {
+    public func presenterWithID(presenterID: Int) -> Presenter? {
         return CoreDataManager.sharedInstance.presenterWithID(presenterID)
     }
     
-    func lectureWithID(lectureID: String) -> Lecture? {
+    public func lectureWithID(lectureID: String) -> Lecture? {
         return CoreDataManager.sharedInstance.lectureWithID(lectureID)
     }
     
-    func changeFavoriteStatusOf(lectureID: String) -> Lecture? {
+    public func changeFavoriteStatusOf(lectureID: String) -> Lecture? {
         return CoreDataManager.sharedInstance.changeFavoriteStatusOf(lectureID)
     }
     
-    func loadDataFromServer() {
+    public func loadDataFromServer() {
         var url = NSURL(string: "http://appventures.co/itTour.json")!
         
         var request = NSMutableURLRequest(URL: url)

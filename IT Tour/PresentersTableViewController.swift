@@ -7,6 +7,7 @@
 //
 
 import CoreData
+import CoreDataFramework
 import UIKit
 
 class PresentersTableViewController: BaseTableViewController {
@@ -26,7 +27,7 @@ class PresentersTableViewController: BaseTableViewController {
             let destinationController = segue.destinationViewController as! PresenterDetailsTableViewController
             let castedSender = sender as! PresenterCell
             
-            var presenter = MainManager.sharedInstance.presenterWithID(castedSender.presenterID)
+            var presenter = CoreDataFramework.MainManager.sharedInstance.presenterWithID(castedSender.presenterID)
             destinationController.presenter = presenter
         }
     }

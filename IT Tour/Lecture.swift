@@ -9,16 +9,16 @@
 import Foundation
 import CoreData
 
-class Lecture: NSManagedObject {
+public class Lecture: NSManagedObject {
 
-    @NSManaged var endTime: NSDate?
-    @NSManaged var lectureID: String?
-    @NSManaged var presentationURL: String?
-    @NSManaged var startTime: NSDate?
-    @NSManaged var videoURL: String?
-    @NSManaged var isFavorite: NSNumber
-    @NSManaged var lectureName: String?
-    @NSManaged var conference: Conference?
-    @NSManaged var presenters: NSSet?
-    @NSManaged var room: Room?
+    @NSManaged public var endTime: NSDate?
+    @NSManaged public var lectureID: String?
+    @NSManaged public var presentationURL: String?
+    @NSManaged public var startTime: NSDate?
+    @NSManaged public var videoURL: String?
+    @NSManaged public var isFavorite: NSNumber
+    @NSManaged public var lectureName: String?
+    @NSManaged public var conference: Conference?
+    @NSManaged public var presenters: NSSet?
+    @NSManaged public var room: Room?
 }

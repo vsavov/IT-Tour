@@ -9,10 +9,10 @@
 import Foundation
 import CoreData
 
-class Room: NSManagedObject {
+public class Room: NSManagedObject {
 
-    @NSManaged var roomID: NSNumber?
-    @NSManaged var roomName: String?
-    @NSManaged var lectures: NSSet?
+    @NSManaged public var roomID: NSNumber?
+    @NSManaged public var roomName: String?
+    @NSManaged public var lectures: NSSet?
 
 }

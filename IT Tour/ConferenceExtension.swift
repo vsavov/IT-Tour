@@ -11,7 +11,7 @@ import UIKit
 
 extension Conference {
     
-    var year: String? {
+    public var year: String? {
         if let unwrappedStartDate = self.startDate {
             let flags = NSCalendarUnit.CalendarUnitYear
             let components = NSCalendar.currentCalendar().components(flags, fromDate: unwrappedStartDate)
@@ -24,13 +24,13 @@ extension Conference {
         return nil
     }
     
-    func setImageData(image: UIImage) {
+    public func setImageData(image: UIImage) {
         let imageData = UIImageJPEGRepresentation(image, 0.8)
         
         self.image = imageData
     }
     
-    func getImage() -> UIImage? {
+    public func getImage() -> UIImage? {
         if let imageData = self.image {
             return UIImage(data: imageData)
         }

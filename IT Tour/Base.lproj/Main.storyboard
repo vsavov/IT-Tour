@@ -503,15 +503,16 @@
                             <rect key="frame" x="0.0" y="0.0" width="600" height="125"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="First name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZHm-F5-YQV">
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="750" verticalHuggingPriority="750" text="First name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZHm-F5-YQV">
                                     <rect key="frame" x="95" y="25" width="79" height="20"/>
                                     <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                     <color key="textColor" red="0.12549019610000001" green="0.12549019610000001" blue="0.12549019610000001" alpha="1" colorSpace="calibratedRGB"/>
                                     <nil key="highlightedColor"/>
                                 </label>
-                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="250" verticalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="Xns-Bl-uQb">
+                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="250" verticalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="Xns-Bl-uQb">
                                     <rect key="frame" x="20" y="20" width="60" height="60"/>
                                     <constraints>
+                                        <constraint firstAttribute="height" constant="60" id="DHd-h1-bWv"/>
                                         <constraint firstAttribute="width" secondItem="Xns-Bl-uQb" secondAttribute="height" multiplier="1:1" id="I0e-aN-fTI"/>
                                     </constraints>
                                 </imageView>
@@ -521,7 +522,7 @@
                                     <color key="textColor" red="0.12549019610000001" green="0.12549019610000001" blue="0.12549019610000001" alpha="1" colorSpace="calibratedRGB"/>
                                     <nil key="highlightedColor"/>
                                 </label>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Short bio" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v0J-YO-cZd">
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" text="Short bio" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v0J-YO-cZd">
                                     <rect key="frame" x="20" y="100" width="67" height="20"/>
                                     <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                     <color key="textColor" red="0.12549019610000001" green="0.12549019610000001" blue="0.12549019610000001" alpha="1" colorSpace="calibratedRGB"/>
@@ -542,7 +543,6 @@
                                 <constraint firstAttribute="bottom" secondItem="v0J-YO-cZd" secondAttribute="bottom" constant="5" id="hIh-gB-INw"/>
                                 <constraint firstItem="6SW-3c-4h1" firstAttribute="leading" secondItem="ZHm-F5-YQV" secondAttribute="leading" id="rE7-kg-13w"/>
                                 <constraint firstItem="Xns-Bl-uQb" firstAttribute="leading" secondItem="frG-Eq-2db" secondAttribute="leading" constant="20" id="sBi-Lr-ckn"/>
-                                <constraint firstItem="6SW-3c-4h1" firstAttribute="top" secondItem="ZHm-F5-YQV" secondAttribute="bottom" constant="5" id="zII-Mt-TSf"/>
                             </constraints>
                         </view>
                         <prototypes>
