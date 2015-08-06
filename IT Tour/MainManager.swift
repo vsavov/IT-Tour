@@ -175,7 +175,7 @@ public class MainManager {
             var endTime = self.dateFromString(lect["EndTime"] as? String)
             
             if endTime != lecture!.endTime {
-                lecture!.endTime = startTime
+                lecture!.endTime = endTime
             }
             
             var videoURL = lect["VideoURL"] as? String
