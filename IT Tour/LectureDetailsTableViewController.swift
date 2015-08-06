@@ -6,6 +6,7 @@
 //  Copyright (c) 2015 г. IT Tour. All rights reserved.
 //
 
+import CoreDataFramework
 import UIKit
 
 class LectureDetailsTableViewController: UITableViewController {

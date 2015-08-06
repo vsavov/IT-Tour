@@ -10,7 +10,7 @@ import Foundation
 
 extension Lecture {
     
-    var startingHour: String? {
+    public var startingHour: String? {
         let dateFormatter = MainManager.hourDateFormatter
         
         if let startTime = self.startTime {

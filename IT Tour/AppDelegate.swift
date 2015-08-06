@@ -6,6 +6,10 @@
 //  Copyright (c) 2015 г. IT Tour. All rights reserved.
 //
 
+
+import CoreDataFramework
+import Crashlytics
+import Fabric
 import UIKit
 
 @UIApplicationMain
@@ -16,6 +20,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
         CoreDataManager.sharedInstance
+        Fabric.with([Crashlytics()])
         
         return true
     }

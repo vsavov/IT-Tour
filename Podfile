@@ -6,6 +6,17 @@ workspace 'IT Tour.xcworkspace'
 xcodeproj 'IT Tour.xcodeproj'
 use_frameworks!
 
-pod 'Fabric', '1.2.8'
-pod 'Crashlytics', '3.1.0'
-pod 'AFNetworking', '2.5.4'
+target 'IT Tour', :exclusive => true do
+
+    link_with 'IT Tour', 'IT Tour WatchKit Extension'
+    
+    pod 'Fabric', '1.2.8'
+    pod 'Crashlytics', '3.1.0'
+end
+
+target 'CoreDataFramework' , :exclusive => true do
+
+    link_with 'CoreDataFramework'
+    
+    pod 'AFNetworking', '2.5.4'
+end

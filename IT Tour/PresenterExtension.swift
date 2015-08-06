@@ -11,17 +11,17 @@ import UIKit
 
 extension Presenter {
     
-    var firstLetter: String? {
+    public var firstLetter: String? {
         return self.firstName?.stringByPaddingToLength(1, withString: "", startingAtIndex: 0)
     }
     
-    func setImageData(image: UIImage) {
+    public func setImageData(image: UIImage) {
         let imageData = UIImageJPEGRepresentation(image, 0.8)
         
         self.image = imageData
     }
     
-    func getImage() -> UIImage? {
+    public func getImage() -> UIImage? {
         if let imageData = self.image {
             return UIImage(data: imageData)
         }

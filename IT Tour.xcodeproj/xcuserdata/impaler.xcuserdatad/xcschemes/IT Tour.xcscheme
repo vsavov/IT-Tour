@@ -34,6 +34,20 @@
                ReferencedContainer = "container:IT Tour.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "NO"
+            buildForArchiving = "NO"
+            buildForAnalyzing = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "49E88B461B73369400136365"
+               BuildableName = "CoreDataFrameworkTests.xctest"
+               BlueprintName = "CoreDataFrameworkTests"
+               ReferencedContainer = "container:IT Tour.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
       </BuildActionEntries>
    </BuildAction>
    <TestAction
@@ -49,6 +63,16 @@
                BlueprintIdentifier = "494EA3101B6D86DB00CFECAD"
                BuildableName = "IT TourTests.xctest"
                BlueprintName = "IT TourTests"
+               ReferencedContainer = "container:IT Tour.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "49E88B461B73369400136365"
+               BuildableName = "CoreDataFrameworkTests.xctest"
+               BlueprintName = "CoreDataFrameworkTests"
                ReferencedContainer = "container:IT Tour.xcodeproj">
             </BuildableReference>
          </TestableReference>

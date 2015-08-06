@@ -9,15 +9,15 @@
 import Foundation
 import CoreData
 
-class Conference: NSManagedObject {
+public class Conference: NSManagedObject {
 
-    @NSManaged var conferenceID: NSNumber?
-    @NSManaged var conferenceName: String?
-    @NSManaged var endDate: NSDate?
-    @NSManaged var isDefault: NSNumber
-    @NSManaged var logoURL: String?
-    @NSManaged var startDate: NSDate?
-    @NSManaged var image: NSData?
-    @NSManaged var lectures: NSSet?
+    @NSManaged public var conferenceID: NSNumber?
+    @NSManaged public var conferenceName: String?
+    @NSManaged public var endDate: NSDate?
+    @NSManaged public var isDefault: NSNumber
+    @NSManaged public var logoURL: String?
+    @NSManaged public var startDate: NSDate?
+    @NSManaged public var image: NSData?
+    @NSManaged public var lectures: NSSet?
 
 }

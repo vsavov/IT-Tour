@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="cFX-u7-N5M">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="7701"/>
+    </dependencies>
+    <scenes>
+        <!--IT Tour-->
+        <scene sceneID="Few-ZG-6xE">
+            <objects>
+                <controller title="IT Tour" id="cFX-u7-N5M" customClass="MainListController" customModule="IT_Tour_WatchKit_Extension">
+                    <items>
+                        <table alignment="left" id="WuR-WB-5Tp">
+                            <items>
+                                <tableRow identifier="LectureRow" id="ZRp-Qi-u9Q" customClass="LectureRow" customModule="IT_Tour_WatchKit_Extension">
+                                    <group key="rootItem" width="1" height="0.0" alignment="left" id="QTa-Ad-YtZ">
+                                        <items>
+                                            <label alignment="left" verticalAlignment="center" text="Lecture Name" numberOfLines="0" id="Bes-00-e4C"/>
+                                        </items>
+                                        <edgeInsets key="margins" left="3" right="3" top="3" bottom="3"/>
+                                    </group>
+                                    <connections>
+                                        <outlet property="lectureNameLabel" destination="Bes-00-e4C" id="apM-MY-hm1"/>
+                                    </connections>
+                                </tableRow>
+                            </items>
+                        </table>
+                        <group width="1" height="1" alignment="left" layout="vertical" id="S8c-Zp-udU">
+                            <items>
+                                <label alignment="center" verticalAlignment="center" text="Label" textAlignment="center" numberOfLines="0" id="t2L-VP-fmI">
+                                    <fontDescription key="font" style="UICTFontTextStyleHeadline"/>
+                                </label>
+                                <label alignment="center" verticalAlignment="center" text="Label" textAlignment="center" numberOfLines="0" id="Muo-3n-cfX"/>
+                            </items>
+                            <edgeInsets key="margins" left="3" right="3" top="3" bottom="3"/>
+                        </group>
+                    </items>
+                    <connections>
+                        <outlet property="descriptionLabel" destination="Muo-3n-cfX" id="V9p-Z9-DmV"/>
+                        <outlet property="emptyPlaceholderGroup" destination="S8c-Zp-udU" id="D7p-0B-Mqf"/>
+                        <outlet property="table" destination="WuR-WB-5Tp" id="15R-hp-W9M"/>
+                        <outlet property="titleLabel" destination="t2L-VP-fmI" id="oUT-JJ-d5K"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="549" y="337"/>
+        </scene>
+        <!--LectureDetailsController-->
+        <scene sceneID="z3N-7l-edT">
+            <objects>
+                <controller identifier="LectureDetailsController" id="OdF-dd-7S3" customClass="LectureDetailsController" customModule="IT_Tour_WatchKit_Extension">
+                    <items>
+                        <table alignment="left" id="709-yd-okN">
+                            <items>
+                                <tableRow identifier="LectureDetailsHeaderRow" selectable="NO" id="8gb-pf-6Fv" customClass="LectureDetailsHeaderRow" customModule="IT_Tour_WatchKit_Extension">
+                                    <group key="rootItem" width="1" height="0.0" alignment="left" layout="vertical" spacing="5" id="wUs-6T-ZHV">
+                                        <items>
+                                            <label alignment="left" text="Label" numberOfLines="0" id="gn2-5n-koM">
+                                                <fontDescription key="font" style="UICTFontTextStyleHeadline"/>
+                                            </label>
+                                            <separator width="0.50000000000000011" alignment="left" id="1Ma-s1-dq0"/>
+                                            <label alignment="left" text="Label" numberOfLines="0" id="sbK-nK-FTQ"/>
+                                            <label alignment="left" text="Label" id="RYs-0V-drx"/>
+                                        </items>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                    </group>
+                                    <connections>
+                                        <outlet property="lectureNameLabel" destination="gn2-5n-koM" id="vnp-Q5-yAi"/>
+                                        <outlet property="lectureTimeLabel" destination="sbK-nK-FTQ" id="RuE-1i-Wyc"/>
+                                        <outlet property="roomNameLabel" destination="RYs-0V-drx" id="LUj-Nc-YIQ"/>
+                                    </connections>
+                                </tableRow>
+                                <tableRow identifier="LectureDetailsPresenterRow" id="upz-EQ-gbG" customClass="LectureDetailsPresenterRow" customModule="IT_Tour_WatchKit_Extension">
+                                    <group key="rootItem" width="1" height="0.0" alignment="left" id="Ax2-MS-2S0">
+                                        <items>
+                                            <group width="30" height="30" alignment="left" verticalAlignment="center" radius="15" id="fen-Lq-EOr"/>
+                                            <label alignment="left" verticalAlignment="center" text="Label" numberOfLines="0" id="sDs-n7-okz"/>
+                                        </items>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                    </group>
+                                    <connections>
+                                        <outlet property="imageGroup" destination="fen-Lq-EOr" id="ME4-cV-cb9"/>
+                                        <outlet property="presenterNameLabel" destination="sDs-n7-okz" id="XIj-02-7EN"/>
+                                    </connections>
+                                </tableRow>
+                            </items>
+                        </table>
+                        <button width="1" alignment="left" title="Button" id="6e3-me-yvF">
+                            <connections>
+                                <action selector="favoriteButtonPressed" destination="OdF-dd-7S3" id="jsL-9F-RLY"/>
+                            </connections>
+                        </button>
+                    </items>
+                    <connections>
+                        <outlet property="favoriteButton" destination="6e3-me-yvF" id="1WU-OZ-AeP"/>
+                        <outlet property="table" destination="709-yd-okN" id="bES-7t-beP"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="752" y="324"/>
+        </scene>
+    </scenes>
+</document>

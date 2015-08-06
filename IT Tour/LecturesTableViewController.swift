@@ -7,6 +7,7 @@
 //
 
 import CoreData
+import CoreDataFramework
 import UIKit
 
 class LecturesTableViewController: BaseTableViewController {
