@@ -10,6 +10,8 @@
 		2E85F473A8D955FE49175A94 /* Pods_IT_Tour.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AAC4BD9401981AFD28120EFF /* Pods_IT_Tour.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		4906189D1B6FD3E60036B7FB /* PresenterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4906189C1B6FD3E60036B7FB /* PresenterCell.swift */; };
 		490618A21B6FDC9F0036B7FB /* LecturesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 490618A11B6FDC9F0036B7FB /* LecturesTableViewController.swift */; };
+		490B65E21B756295005041D9 /* CoreDataFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49E88B3D1B73369400136365 /* CoreDataFramework.framework */; };
+		490B65E31B756295005041D9 /* CoreDataFramework.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 49E88B3D1B73369400136365 /* CoreDataFramework.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		490B65E81B756448005041D9 /* PresenterDetailsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 490B65E71B756448005041D9 /* PresenterDetailsController.swift */; };
 		491ABEE91B6F5F0A0078F796 /* BaseTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 491ABEE81B6F5F0A0078F796 /* BaseTableViewController.swift */; };
 		491ABEEC1B6F74300078F796 /* LectureCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 491ABEEB1B6F74300078F796 /* LectureCell.swift */; };
@@ -25,7 +27,6 @@
 		494EA3391B6EAE2C00CFECAD /* ConferenceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494EA3381B6EAE2C00CFECAD /* ConferenceCell.swift */; };
 		498D66821B72D49E00A3972D /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 498D66841B72D49E00A3972D /* Localizable.strings */; };
 		498D66881B72EB8000A3972D /* LectureOptionsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 498D66871B72EB8000A3972D /* LectureOptionsCell.swift */; };
-		498DFF171B73F94F009954DC /* CoreDataFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49E88B3D1B73369400136365 /* CoreDataFramework.framework */; };
 		49B88DF31B73733000E9D591 /* MainListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49B88DF21B73733000E9D591 /* MainListController.swift */; };
 		49B88DF51B7375CA00E9D591 /* LectureRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49B88DF41B7375CA00E9D591 /* LectureRow.swift */; };
 		49B88DF71B73768D00E9D591 /* LectureDetailsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49B88DF61B73768D00E9D591 /* LectureDetailsController.swift */; };
@@ -59,6 +60,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		490B65E41B756295005041D9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 494EA2F11B6D86DA00CFECAD /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 49E88B3C1B73369400136365;
+			remoteInfo = CoreDataFramework;
+		};
 		494EA3121B6D86DB00CFECAD /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 494EA2F11B6D86DA00CFECAD /* Project object */;
@@ -97,6 +105,17 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
+		490B65E61B756295005041D9 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				490B65E31B756295005041D9 /* CoreDataFramework.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		49E88B361B732D8600136365 /* Embed App Extensions */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -188,8 +207,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				498DFF171B73F94F009954DC /* CoreDataFramework.framework in Frameworks */,
 				703E8D30D9604A5BFD383C2C /* Pods_IT_Tour.framework in Frameworks */,
+				490B65E21B756295005041D9 /* CoreDataFramework.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -519,11 +538,13 @@
 				7BABC40EAC85C0B7BF37B849 /* Copy Pods Resources */,
 				49E88B361B732D8600136365 /* Embed App Extensions */,
 				49B88DFF1B73A66600E9D591 /* ShellScript */,
+				490B65E61B756295005041D9 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 				49E88B2E1B732D8600136365 /* PBXTargetDependency */,
+				490B65E51B756295005041D9 /* PBXTargetDependency */,
 			);
 			name = "IT Tour";
 			productName = "IT Tour";
@@ -953,6 +974,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		490B65E51B756295005041D9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 49E88B3C1B73369400136365 /* CoreDataFramework */;
+			targetProxy = 490B65E41B756295005041D9 /* PBXContainerItemProxy */;
+		};
 		494EA3131B6D86DB00CFECAD /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 494EA2F81B6D86DA00CFECAD /* IT Tour */;
