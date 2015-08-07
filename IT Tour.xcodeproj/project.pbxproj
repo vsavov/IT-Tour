@@ -10,6 +10,7 @@
 		2E85F473A8D955FE49175A94 /* Pods_IT_Tour.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AAC4BD9401981AFD28120EFF /* Pods_IT_Tour.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		4906189D1B6FD3E60036B7FB /* PresenterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4906189C1B6FD3E60036B7FB /* PresenterCell.swift */; };
 		490618A21B6FDC9F0036B7FB /* LecturesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 490618A11B6FDC9F0036B7FB /* LecturesTableViewController.swift */; };
+		490B65E81B756448005041D9 /* PresenterDetailsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 490B65E71B756448005041D9 /* PresenterDetailsController.swift */; };
 		491ABEE91B6F5F0A0078F796 /* BaseTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 491ABEE81B6F5F0A0078F796 /* BaseTableViewController.swift */; };
 		491ABEEC1B6F74300078F796 /* LectureCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 491ABEEB1B6F74300078F796 /* LectureCell.swift */; };
 		491ABEF01B6F79A70078F796 /* FavoriteCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 491ABEEF1B6F79A70078F796 /* FavoriteCell.swift */; };
@@ -115,6 +116,7 @@
 		21329C9CEB1091D85879D740 /* Pods-CoreDataFramework.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CoreDataFramework.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CoreDataFramework/Pods-CoreDataFramework.debug.xcconfig"; sourceTree = "<group>"; };
 		4906189C1B6FD3E60036B7FB /* PresenterCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PresenterCell.swift; sourceTree = "<group>"; };
 		490618A11B6FDC9F0036B7FB /* LecturesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LecturesTableViewController.swift; sourceTree = "<group>"; };
+		490B65E71B756448005041D9 /* PresenterDetailsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PresenterDetailsController.swift; sourceTree = "<group>"; };
 		491ABEE81B6F5F0A0078F796 /* BaseTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseTableViewController.swift; sourceTree = "<group>"; };
 		491ABEEB1B6F74300078F796 /* LectureCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LectureCell.swift; sourceTree = "<group>"; };
 		491ABEEF1B6F79A70078F796 /* FavoriteCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoriteCell.swift; sourceTree = "<group>"; };
@@ -397,6 +399,7 @@
 				49B88DFA1B73884A00E9D591 /* LectureDetailsPresenterRow.swift */,
 				49B88DF41B7375CA00E9D591 /* LectureRow.swift */,
 				49B88DF21B73733000E9D591 /* MainListController.swift */,
+				490B65E71B756448005041D9 /* PresenterDetailsController.swift */,
 				49E88B191B732D8500136365 /* Supporting Files */,
 			);
 			path = "IT Tour WatchKit Extension";
@@ -913,6 +916,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				490B65E81B756448005041D9 /* PresenterDetailsController.swift in Sources */,
 				49B88DF31B73733000E9D591 /* MainListController.swift in Sources */,
 				49B88DFB1B73884A00E9D591 /* LectureDetailsPresenterRow.swift in Sources */,
 				49B88DF51B7375CA00E9D591 /* LectureRow.swift in Sources */,

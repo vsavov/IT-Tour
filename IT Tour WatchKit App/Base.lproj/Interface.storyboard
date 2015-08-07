@@ -97,7 +97,38 @@
                     </connections>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="752" y="324"/>
+            <point key="canvasLocation" x="733" y="324.75"/>
+        </scene>
+        <!--PresenterDetailsController-->
+        <scene sceneID="oSl-WI-eFL">
+            <objects>
+                <controller identifier="PresenterDetailsController" id="Tsy-Ou-L57" customClass="PresenterDetailsController" customModule="IT_Tour_WatchKit_Extension">
+                    <items>
+                        <group width="1" alignment="left" layout="vertical" id="Joe-J1-Tig">
+                            <items>
+                                <group width="44" height="44" alignment="center" radius="22" id="KOv-Iu-s1e"/>
+                                <label alignment="center" text="Label" textAlignment="center" numberOfLines="0" id="r8n-yZ-SGC">
+                                    <fontDescription key="font" style="UICTFontTextStyleHeadline"/>
+                                </label>
+                            </items>
+                            <edgeInsets key="margins" left="4" right="4" top="2" bottom="4"/>
+                        </group>
+                        <separator width="0.80000000000000004" alignment="center" id="BzQ-Oq-m3Y"/>
+                        <group width="1" alignment="left" id="az6-x6-0hb">
+                            <items>
+                                <label alignment="left" text="Label" textAlignment="left" numberOfLines="0" id="Tem-0k-g0C"/>
+                            </items>
+                            <edgeInsets key="margins" left="0.0" right="0.0" top="4" bottom="0.0"/>
+                        </group>
+                    </items>
+                    <connections>
+                        <outlet property="presenterImageGroup" destination="KOv-Iu-s1e" id="k6E-Yp-Qss"/>
+                        <outlet property="presenterNameLabel" destination="r8n-yZ-SGC" id="N98-Sf-Y6Z"/>
+                        <outlet property="presenterShortBioLabel" destination="Tem-0k-g0C" id="72S-wp-ofc"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="930" y="324"/>
         </scene>
     </scenes>
 </document>

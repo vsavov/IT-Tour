@@ -76,6 +76,16 @@ class LectureDetailsController: WKInterfaceController {
         super.didDeactivate()
     }
     
+    // MARK: - Table related methods
+    
+    override func table(table: WKInterfaceTable, didSelectRowAtIndex rowIndex: Int) {
+        let presenters = self.lecture!.presenters?.allObjects as? [Presenter]
+        
+        if let unwrappedPresenters = presenters {
+            self.pushControllerWithName("PresenterDetailsController", context: unwrappedPresenters[rowIndex-1])
+        }
+    }
+    
     // MARK: - Private methods
     
     private func updateButtonLabel() {
