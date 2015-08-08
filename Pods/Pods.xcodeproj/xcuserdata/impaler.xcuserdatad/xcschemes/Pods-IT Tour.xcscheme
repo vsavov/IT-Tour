@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "3F582E2E7DE365DE18C94552"
+               BlueprintIdentifier = "3F5B0C04A3690F2B3855D0EA"
                BuildableName = "Pods_IT_Tour.framework"
                BlueprintName = "Pods-IT Tour"
                ReferencedContainer = "container:Pods.xcodeproj">

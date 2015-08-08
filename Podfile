@@ -13,10 +13,3 @@ target 'IT Tour', :exclusive => true do
     pod 'Fabric', '1.2.8'
     pod 'Crashlytics', '3.1.0'
 end
-
-target 'CoreDataFramework' , :exclusive => true do
-
-    link_with 'CoreDataFramework'
-    
-    pod 'AFNetworking', '2.5.4'
-end

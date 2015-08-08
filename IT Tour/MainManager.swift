@@ -6,7 +6,6 @@
 //  Copyright (c) 2015 IT Tour. All rights reserved.
 //
 
-import AFNetworking
 import Foundation
 import CoreData
 
@@ -50,32 +49,27 @@ public class MainManager {
     }
     
     public func loadDataFromServer() {
-        var url = NSURL(string: "http://appventures.co/itTour.json")!
-        
-        var request = NSMutableURLRequest(URL: url)
-        
-        var operation = AFHTTPRequestOperation(request: request)
-        operation.responseSerializer = AFJSONResponseSerializer()
-        operation.setCompletionBlockWithSuccess( { (operation: AFHTTPRequestOperation!, responseObject: AnyObject!) in
-            if let jsonDictionary = responseObject as? JSONDictionary {
-                self.parseJSON(jsonDictionary)
-            }
-            },
-            failure: { (operation: AFHTTPRequestOperation!, error: NSError!) in
-                if let unwrappedError = error {
-                    NSLog("Failed loading json \(unwrappedError)")
+        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0), { () -> Void in
+            var url = NSURL(string: "http://appventures.co/itTour.json")!
+            
+            let jsonData = NSData(contentsOfURL: url)
+            
+            if let unwrappedJsonData = jsonData {
+                var error: NSError?
+                var json: AnyObject? = NSJSONSerialization.JSONObjectWithData(unwrappedJsonData, options: NSJSONReadingOptions.allZeros, error: &error)
+                
+                if let jsonDictionary = json as? JSONDictionary {
+                    self.parseJSON(jsonDictionary)
                 }
             }
-        )
-        
-        operation.start()
+        })
     }
     
     public func getFavoriteLectures() -> [Lecture] {
         return CoreDataManager.sharedInstance.getFavoriteLectures()
     }
     
-    func parseJSON(json: JSONDictionary) {
+    private func parseJSON(json: JSONDictionary) {
         ////////////////////////
         // Order DOES matter! //
         ////////////////////////
@@ -89,7 +83,7 @@ public class MainManager {
         self.loadPresentersImagesFrom(presentersImageURLs)
     }
     
-    func parseConferencesJSON(conferences: JSONArray, defaultConferenceID: NSNumber) -> [String] {
+    private func parseConferencesJSON(conferences: JSONArray, defaultConferenceID: NSNumber) -> [String] {
         var imageURLs: [String] = []
         
         for conf in conferences {
@@ -148,7 +142,7 @@ public class MainManager {
         return imageURLs
     }
     
-    func parseLecturesJSON(lectures: JSONArray) -> [Lecture] {
+    private func parseLecturesJSON(lectures: JSONArray) -> [Lecture] {
         let context = CoreDataManager.sharedInstance.managedObjectContext
         
         var result: [Lecture] = Array()
@@ -222,7 +216,7 @@ public class MainManager {
         return result
     }
     
-    func parsePresentersJSON(presenters: JSONArray) -> [String] {
+    private func parsePresentersJSON(presenters: JSONArray) -> [String] {
         var imageURLs: [String] = []
         
         for prt in presenters {
@@ -271,7 +265,7 @@ public class MainManager {
         return imageURLs
     }
     
-    func parseRoomsJSON(rooms: JSONArray) {
+    private func parseRoomsJSON(rooms: JSONArray) {
         for rm in rooms {
             let rmID = rm["RoomID"] as! NSNumber
             
@@ -287,7 +281,7 @@ public class MainManager {
         }
     }
     
-    func dateFromString(dateString: String?) -> NSDate? {
+    private func dateFromString(dateString: String?) -> NSDate? {
         if let unwrappedDateString = dateString {
             return MainManager.parsingDateFormatter.dateFromString(unwrappedDateString)
         }
@@ -295,83 +289,65 @@ public class MainManager {
         return nil
     }
     
-    func loadPresentersImagesFrom(urls: [String]) {
+    private func loadPresentersImagesFrom(urls: [String]) {
         let queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0)
         
         let operationQueue = NSOperationQueue()
+        operationQueue.underlyingQueue = queue
         operationQueue.maxConcurrentOperationCount = 1
         
-        dispatch_async(queue, { () -> Void in
-            for urlString in urls {
-                var url = NSURL(string: urlString)!
+        for urlString in urls {
+            operationQueue.addOperationWithBlock({ () -> Void in
+                let url = NSURL(string: urlString)!
                 
-                var request = NSMutableURLRequest(URL: url)
+                let imageData = NSData(contentsOfURL: url)
                 
-                var operation = AFHTTPRequestOperation(request: request)
-                operation.responseSerializer = AFImageResponseSerializer()
-                operation.completionQueue = queue
-                operation.setCompletionBlockWithSuccess( { (operation: AFHTTPRequestOperation!, responseObject: AnyObject!) in
-                        operationQueue.addOperationWithBlock({ () -> Void in
-                            if let image = responseObject as? UIImage {
-                                var presenter = CoreDataManager.sharedInstance.presenterForImageURL(operation.request.URL!.absoluteString!)
-                                
-                                if let unwrappedPresenter = presenter {
-                                    unwrappedPresenter.setImageData(image)
-                                    
-                                    CoreDataManager.sharedInstance.save()
-                                }
-                            }
-                        })
-                    },
-                    failure: { (operation: AFHTTPRequestOperation!, error: NSError!) in
-                        if let unwrappedError = error {
-                            NSLog("Failed loading image with url '\(urlString)' \(unwrappedError)")
-                        }
+                if let unwrappedImageData = imageData {
+                    var presenter = CoreDataManager.sharedInstance.presenterForImageURL(urlString)
+                    
+                    if let unwrappedPresenter = presenter {
+                        let image = UIImage(data: unwrappedImageData)
+                        
+                        unwrappedPresenter.setImageData(image)
+                        
+                        CoreDataManager.sharedInstance.save()
                     }
-                )
-                
-                operation.start()
-            }
+                }
+            })
+        }
+        
+        operationQueue.addOperationWithBlock({ () -> Void in
+            CoreDataManager.sharedInstance.save()
         })
     }
     
-    func loadConferencesImagesFrom(urls: [String]) {
+    private func loadConferencesImagesFrom(urls: [String]) {
         let queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0)
         
         let operationQueue = NSOperationQueue()
+        operationQueue.underlyingQueue = queue
         operationQueue.maxConcurrentOperationCount = 1
         
-        dispatch_async(queue, { () -> Void in
-            for urlString in urls {
-                var url = NSURL(string: urlString)!
+        for urlString in urls {
+            operationQueue.addOperationWithBlock({ () -> Void in
+                let url = NSURL(string: urlString)!
                 
-                var request = NSMutableURLRequest(URL: url)
+                let imageData = NSData(contentsOfURL: url)
                 
-                var operation = AFHTTPRequestOperation(request: request)
-                operation.responseSerializer = AFImageResponseSerializer()
-                operation.completionQueue = queue
-                operation.setCompletionBlockWithSuccess( { (operation: AFHTTPRequestOperation!, responseObject: AnyObject!) in
-                    operationQueue.addOperationWithBlock({ () -> Void in
-                        if let image = responseObject as? UIImage {
-                            var conference = CoreDataManager.sharedInstance.conferenceForImageURL(operation.request.URL!.absoluteString!)
-                            
-                            if let unwrappedConference = conference {
-                                unwrappedConference.setImageData(image)
-                                
-                                CoreDataManager.sharedInstance.save()
-                            }
-                        }
-                    })
-                    },
-                    failure: { (operation: AFHTTPRequestOperation!, error: NSError!) in
-                        if let unwrappedError = error {
-                            NSLog("Failed loading image with url '\(urlString)' \(unwrappedError)")
-                        }
+                if let unwrappedImageData = imageData {
+                    var conference = CoreDataManager.sharedInstance.conferenceForImageURL(urlString)
+                    
+                    if let unwrappedConference = conference {
+                        let image = UIImage(data: unwrappedImageData)
+                        
+                        unwrappedConference.setImageData(image)
                     }
-                )
-                
-                operation.start()
-            }
+                }
+            })
+        }
+        
+        operationQueue.addOperationWithBlock({ () -> Void in
+            CoreDataManager.sharedInstance.save()
         })
     }
 }
