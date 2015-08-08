@@ -24,10 +24,16 @@ extension Conference {
         return nil
     }
     
-    public func setImageData(image: UIImage) {
-        let imageData = UIImageJPEGRepresentation(image, 0.8)
+    public func setImageData(image: UIImage?) {
+        if let unwrappedImage = image {
+            let imageData = UIImageJPEGRepresentation(unwrappedImage, 0.8)
+            
+            self.image = imageData
+            
+            return
+        }
         
-        self.image = imageData
+        self.image = nil
     }
     
     public func getImage() -> UIImage? {
