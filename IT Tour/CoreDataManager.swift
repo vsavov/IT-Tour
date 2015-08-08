@@ -32,7 +32,7 @@ public class CoreDataManager {
         assert(modelURL != nil, "Can't find URL for the CoreData model!")
         
         let mom = NSManagedObjectModel(contentsOfURL: modelURL!)
-        assert(mom != nil, "Error initializing ManagedObjectModel from: \(modelURL!)!")
+        assert(mom != nil, "Error initializing ManagedObjectModel from: \(modelURL)!")
         
         let persistanceStoreCoordinator = NSPersistentStoreCoordinator(managedObjectModel: mom!)
         
@@ -67,12 +67,12 @@ public class CoreDataManager {
         self.managedObjectContext.performBlockAndWait { () -> Void in
             var error: NSError?
             
-            assert(self.managedObjectContext.save(&error), "Failed to save main context: \(error!.localizedDescription)\n\(error!.userInfo)")
+            assert(self.managedObjectContext.save(&error), "Failed to save main context: \(error?.localizedDescription)\n\(error?.userInfo)")
             
             self.privateContext.performBlock({ () -> Void in
                 var privateError: NSError?
                 
-                assert(self.privateContext.save(&error), "Failed to save private context: \(privateError!.localizedDescription)\n\(privateError!.userInfo)")
+                assert(self.privateContext.save(&error), "Failed to save private context: \(privateError?.localizedDescription)\n\(privateError?.userInfo)")
             })
         }
     }

@@ -4,16 +4,6 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>AFNetworking.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
-		<key>Pods-CoreDataFramework.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
 		<key>Pods-IT Tour.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -22,26 +12,6 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>1F3BFEFCED9DAF330873301B484F4B7C</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>246017E1F23C70D6B7114A949D87F7BF</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>28D86243ED3696E9D09DF535</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>CAC5968C550980C2EE0D4601</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
 		<key>E4B08096AD8635618581094BD5EC0412</key>
 		<dict>
 			<key>primary</key>
